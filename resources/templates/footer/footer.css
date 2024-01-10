@@ -1,0 +1,22 @@
+.redesSociales {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 1rem 0;
+    background-color: #000;
+}
+
+.siganosRedes {
+    font-size: 1.5rem;
+    text-align: center;
+    text-wrap: pretty;
+}
+
+.plataformasOficiales {
+    display: flex;
+    justify-content: space-around;
+}
+
+.plataformasOficiales>a>i {
+    font-size: 2rem;
+}
