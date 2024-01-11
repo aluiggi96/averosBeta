@@ -4,8 +4,8 @@ body {
 
 body::before {
     content: "";
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     z-index: -1;
     background-image: url(https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-size: cover;
@@ -15,3 +15,98 @@ body::before {
     position: fixed;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.contenido {
+    background-color: hsla(0, 0%, 10%, .75);
+    backdrop-filter: blur(1rem);
+    border-radius: 2rem;
+    margin: 1rem;
+    width: 100%;
+    max-width: 100rem;
+    padding: 1rem;
+
+}
+
+.area {
+    background-color: hsla(0, 0%, 5%, 0.75);
+    border-radius: 1rem;
+}
+
+.musica {
+    max-height: 60rem;
+    display: grid;
+    grid-template-rows: 4rem 1fr;
+}
+
+.tituloSeccion {
+    justify-self: center;
+    align-self: center;
+}
+
+.boxMusica {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+}
+
+.a-card {
+    display: grid;
+    align-items: center;
+    position: relative;
+}
+
+.a-card>img {
+    width: 100%;
+}
+
+.a-card .darkCover {
+    position: absolute;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-content: space-around;
+    background-color: hsla(0, 0%, 0%, .75);
+}
+
+.b-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.botones {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    align-items: center;
+}
+
+.botonDisponibles,
+.botonProximos {
+    padding: 1rem 0;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.botonActivo {
+    background-color: #333;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .boxMusica {
+        grid-template-columns: 1fr;
+    }
+
+    .musica {
+        max-height: 100rem;
+    }
+}
