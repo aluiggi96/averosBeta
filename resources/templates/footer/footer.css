@@ -1,8 +1,10 @@
 .redesSociales {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1rem;
+    gap: 1rem;
     background-color: #000;
 }
 
@@ -14,5 +16,5 @@
 
 .plataformasOficiales {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
