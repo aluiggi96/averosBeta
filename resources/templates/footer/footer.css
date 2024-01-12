@@ -16,7 +16,3 @@
     display: flex;
     justify-content: space-around;
 }
-
-.plataformasOficiales>a>i {
-    font-size: 2rem;
-}

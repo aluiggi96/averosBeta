@@ -37,7 +37,6 @@ main {
 }
 
 .musica {
-    max-height: 60rem;
     display: grid;
     grid-template-rows: 4rem 1fr;
 }
@@ -50,15 +49,12 @@ main {
 .boxMusica {
     display: grid;
     gap: 1rem;
-    width: 100%;
     justify-content: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     padding: 1rem;
 }
 
 .a-card {
-    display: grid;
-    align-items: center;
     position: relative;
 }
 
@@ -83,10 +79,8 @@ main {
 
 .botones {
     display: grid;
-    justify-content: center;
     grid-template-columns: 50% 50%;
     text-align: center;
-    align-items: center;
 }
 
 .botonDisponibles,
@@ -102,6 +96,7 @@ main {
 
 .listaDisponibles {
     display: grid;
+    grid-template-rows: repeat(2, 50%);
 }
 
 .listaProximos {
@@ -109,20 +104,52 @@ main {
 }
 
 .mensajeListaVacia{
-   display: grid;
-   padding: 2rem 0;
-   justify-content: center;
-   align-content: center;
-   text-align: center; 
+    display: grid;
+    padding: 2rem 0;
+    justify-content: center;
+    align-content: center;
+    text-align: center; 
 }
 
-/* -------- Version movil ------------- */
+.musicaArea, .videoArea{
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.titleAreaMusica{
+    justify-self: center;
+    padding: 1rem 0;
+}
+
+.musicasDisponibles{
+    display: grid;
+    gap: 1rem;
+    overflow-y: scroll;
+}
+
+.single{
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    grid-template-columns: 10% 40% 1fr;
+}
+
+.single>img{
+    width: 100%;
+}
+
+.plataformas {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* -------- Version movil ---------- */
 @media only screen and (max-width: 700px) {
     .boxMusica {
+        grid-template-rows: auto 1fr;
         grid-template-columns: 1fr;
     }
-
-    .musica {
-        max-height: 100rem;
+    .b-card{
+        height: 50rem;
     }
 }
