@@ -103,38 +103,39 @@ main {
     display: none;
 }
 
-.mensajeListaVacia{
+.mensajeListaVacia {
     display: grid;
     padding: 2rem 0;
     justify-content: center;
     align-content: center;
-    text-align: center; 
+    text-align: center;
 }
 
-.musicaArea, .videoArea{
+.musicaArea,
+.videoArea {
     display: grid;
     grid-template-rows: auto 1fr;
 }
 
-.titleAreaMusica{
+.titleAreaMusica {
     justify-self: center;
     padding: 1rem 0;
 }
 
-.musicasDisponibles{
+.musicasDisponibles {
     display: grid;
     gap: 1rem;
     overflow-y: scroll;
 }
 
-.single{
+.single {
     display: grid;
     align-items: center;
     gap: 1rem;
     grid-template-columns: 10% 40% 1fr;
 }
 
-.single>img{
+.single>img {
     width: 100%;
 }
 
@@ -149,7 +150,8 @@ main {
         grid-template-rows: auto 1fr;
         grid-template-columns: 1fr;
     }
-    .b-card{
+
+    .b-card {
         height: 50rem;
     }
 }

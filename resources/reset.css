@@ -3,15 +3,15 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 12px;
-    font-family: Verdana,Geneva,Tahoma,sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #f5f5f5
 }
 
-h2{
+h2 {
     font-size: 1.5rem;
     text-decoration: underline;
 }
 
-i{
+i {
     font-size: xx-large;
 }
