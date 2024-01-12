@@ -85,9 +85,13 @@ function generarListado() {
     var listaDeMusicaProximos = document.createElement('div');
     var listaDeVideoProximos = document.createElement('div');
     var mensajeListaVaciaDisponibles = document.createElement('p')
+    var mensajeListaVaciaProximos = document.createElement('p')
+    
+    mensajeListaVaciaProximos.innerHTML = 'Estamos plasmando ideas del alma en música... 🎵<br>Sigan atentos en nuestras redes oficiales'
     mensajeListaVaciaDisponibles.innerHTML= "No hay nada disponible por el momento... 😔<br>Vuelve mas tarde 😊"
     
     mensajeListaVaciaDisponibles.classList.add('mensajeListaVacia')
+    mensajeListaVaciaProximos.classList.add('mensajeListaVacia')
     listaDeMusicaDisponibles.classList.add('musicaArea');
     listaDeVideoDisponibles.classList.add('videoArea');
     listaDeMusicaProximos.classList.add('musicaArea');
@@ -100,8 +104,13 @@ function generarListado() {
         listaDisponibles.appendChild(listaDeVideoDisponibles);
     }
 
-    listaProximos.appendChild(listaDeMusicaProximos);
-    listaProximos.appendChild(listaDeVideoProximos);
+    if (MULTIMEDIA.PROXIMOSLANZAMIENTOS.length === 0) {
+        listaProximos.appendChild(mensajeListaVaciaProximos)
+    } else {
+        listaProximos.appendChild(listaDeMusicaProximos);
+        listaProximos.appendChild(listaDeVideoProximos);
+    }
+
 }
 
 generarListado();
