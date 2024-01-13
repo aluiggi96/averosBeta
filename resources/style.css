@@ -16,130 +16,144 @@ body::before {
 }
 
 main {
-    margin-top: 4rem;
     display: flex;
     justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
 }
 
 .contenido {
-    background-color: hsla(0, 0%, 10%, .75);
+    display: grid;
+    width: 95%;
+    background-color: hsla(0, 0%, 100%, .25);
     backdrop-filter: blur(1rem);
-    border-radius: 2rem;
-    margin: 1rem;
-    width: 100%;
-    max-width: 100rem;
     padding: 1rem;
-
+    border-radius: 2rem;
 }
 
 .area {
-    background-color: hsla(0, 0%, 5%, 0.75);
+    display: grid;
+    background-color: hsla(0, 0%, 0%, .75);
+    overflow: hidden;
     border-radius: 1rem;
 }
 
 .musica {
+    max-height: 50rem;
     display: grid;
-    grid-template-rows: 4rem 1fr;
+    grid-template-rows: 4rem;
 }
 
 .tituloSeccion {
-    justify-self: center;
-    align-self: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 .boxMusica {
     display: grid;
-    gap: 1rem;
-    justify-content: center;
-    grid-template-columns: 50% 50%;
-    padding: 1rem;
+    grid-template-columns: 1fr 50%;
+}
+
+.a-card, .b-card{
+    display: grid;
+    padding: .5rem;
+    height: 46rem;
 }
 
 .a-card {
+    align-items: center;
+    justify-items: center;
+}
+
+.containerCover {
     position: relative;
+    max-width: 480px;
+    aspect-ratio: 1/1;
 }
 
-.a-card>img {
-    width: 100%;
-}
-
-.a-card .darkCover {
+.darkCover{
     position: absolute;
     display: grid;
+    justify-items: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    justify-items: center;
-    align-content: space-around;
     background-color: hsla(0, 0%, 0%, .75);
 }
 
-.b-card {
-    display: grid;
-    grid-template-rows: auto 1fr;
+.containerCover>img {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.b-card{
+    grid-template-rows: 3rem 1fr;
 }
 
 .botones {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
     text-align: center;
-}
-
-.botonDisponibles,
-.botonProximos {
-    display: grid;
     align-items: center;
-    padding: 1rem 0;
-    border-radius: 1rem;
-    cursor: pointer;
 }
 
 .botonActivo {
-    background-color: #333;
+    display: grid;
+    align-items: center;
+    border-radius: 1rem;
+    height: 100%;
+    background-color: hsla(0, 0%, 100%, .25);
 }
 
-.listaDisponibles {
+.listaDisponibles{
     display: grid;
-    grid-template-rows: repeat(2, 50%);
+    grid-template-rows: 50% 50%;
+}
+
+.mensajeListaVacia{
+    display: grid;
+    align-items: center;
+    text-align: center;
 }
 
 .listaProximos {
     display: none;
 }
 
-.mensajeListaVacia {
+.musicaArea {
     display: grid;
-    padding: 2rem 0;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-}
-
-.musicaArea,
-.videoArea {
-    display: grid;
-    grid-template-rows: auto 1fr;
+    max-height: 21rem;
+    grid-template-rows: 2rem 1fr;
 }
 
 .titleAreaMusica {
-    justify-self: center;
-    padding: 1rem 0;
+    display: grid;
+    align-items: center;
+    text-align: center;
 }
 
 .musicasDisponibles {
     display: grid;
-    gap: 1rem;
+    gap: .5rem;
     overflow-y: scroll;
 }
 
 .single {
     display: grid;
-    align-items: center;
     gap: 1rem;
-    grid-template-columns: 10% 40% 1fr;
+    align-items: center;
+    grid-template-columns: 15% 45% 1fr;
 }
 
 .single>img {
     width: 100%;
+}
+
+.metadata{
+    display: grid;
+    gap: .5rem;
 }
 
 .plataformas {
@@ -147,14 +161,18 @@ main {
     justify-content: space-around;
 }
 
-/* -------- Version movil ---------- */
-@media only screen and (max-width: 700px) {
-    .boxMusica {
-        grid-template-rows: auto 1fr;
+
+@media only screen and (max-width: 661px){
+    .boxMusica{
         grid-template-columns: 1fr;
     }
-
-    .b-card {
-        height: 50rem;
+    .musica{
+        max-height: 100rem;
+    }
+    .a-card{
+        height: auto;
+    }
+    .single{
+        grid-template-columns: 15% 30% 1fr;
     }
 }

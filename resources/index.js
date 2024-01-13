@@ -43,6 +43,7 @@ const MULTIMEDIA = {
             ],
             plataformasVideo: [],
         },
+        
     ],
     PROXIMOSLANZAMIENTOS: [
         // {
@@ -115,7 +116,7 @@ function generarListado() {
 
                 const contenido = `
         <img src="${media.coverURL}">
-        <div>
+        <div class="metadata">
             <h3>${media.artistas}</h3>
             <p>${media.nombreCancion}</p>
         </div>
