@@ -105,9 +105,16 @@ function generarListado() {
         titleAreaMusica.classList.add('titleAreaMusica')
         titleAreaMusica.innerHTML = 'Música'
         listaDeMusicaDisponibles.appendChild(titleAreaMusica)
+        var titleAreaVideo = document.createElement('h2')
+        titleAreaVideo.classList.add('titleAreaVideo')
+        titleAreaVideo.innerHTML = 'Video'
+        listaDeVideoDisponibles.appendChild(titleAreaVideo)
         var musicasDisponibles = document.createElement('div')
         musicasDisponibles.classList.add('musicasDisponibles')
         listaDeMusicaDisponibles.appendChild(musicasDisponibles)
+        var videosDisponibles = document.createElement('div')
+        videosDisponibles.classList.add('videosDisponibles')
+        listaDeVideoDisponibles.appendChild(videosDisponibles)
         var cards = document.querySelectorAll('.card');
 
         cards.forEach(function (card) {
@@ -137,6 +144,29 @@ function generarListado() {
                 single.innerHTML = contenido
 
                 musicasDisponibles.appendChild(single)
+            }
+            
+            if (media.video === true) {
+                var singleVid = document.createElement('div')
+                singleVid.classList.add('singleVid')
+
+                const contenidoVid = `
+                <img src="${media.coverURL}">
+                <div class="metadata">
+                <h3>${media.artistas}</h3>
+                <p>${media.nombreCancion}</p>
+                </div>
+                <div class="plataformas">
+                ${media.plataformasVideo.map(plataforma => `
+                <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-${plataforma.nombre.toLowerCase()}"></i>
+                </a>
+                `).join('')}
+                </div>
+                `
+                singleVid.innerHTML = contenidoVid
+                
+                videosDisponibles.appendChild(singleVid)
             }
             listaDisponibles.appendChild(listaDeMusicaDisponibles);
             listaDisponibles.appendChild(listaDeVideoDisponibles);

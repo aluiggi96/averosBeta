@@ -26,8 +26,8 @@ main {
     display: grid;
     width: 100%;
     max-width: 1024px;
-    background-color: hsla(0, 0%, 100%, .25);
-    backdrop-filter: blur(1rem);
+    background-color: hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(2rem);
     padding: 1rem;
     margin: 0 1rem;
     border-radius: 2rem;
@@ -59,7 +59,7 @@ main {
 
 .card {
     display: grid;
-    padding: .5rem;
+    padding: 1.25rem;
     width: 100%;
     height: auto;
 }
@@ -104,6 +104,7 @@ main {
     gap: 1rem;
     text-align: center;
     align-items: center;
+    font-weight: bold;
 }
 
 .botonActivo {
@@ -111,7 +112,8 @@ main {
     align-items: center;
     border-radius: 1rem;
     height: 100%;
-    background-color: hsla(0, 0%, 100%, .25);
+    background-color: hsla(0, 0%, 100%, .8);
+    color: hsl(0, 0%, 33%);
 }
 
 .listaNoDisponibles{
@@ -134,32 +136,32 @@ main {
     display: none;
 }
 
-.musicaArea {
+.musicaArea, .videoArea {
     display: grid;
     max-height: 21rem;
-    grid-template-rows: 2rem 1fr;
+    grid-template-rows: 3rem 1fr;
 }
 
-.titleAreaMusica {
+.titleAreaMusica, .titleAreaVideo {
     display: grid;
     justify-content: center;
     align-items: center;
 }
 
-.musicasDisponibles {
+.musicasDisponibles, .videosDisponibles {
     display: grid;
     gap: .5rem;
     overflow-y: scroll;
 }
 
-.single {
+.single, .singleVid {
     display: grid;
     gap: 1rem;
     align-items: center;
     grid-template-columns: 15% 45% 1fr;
 }
 
-.single>img {
+.single>img, .singleVid>img {
     width: 100%;
 }
 
@@ -187,7 +189,7 @@ main {
         height: auto;
     }
 
-    .single {
+    .single, .singleVid {
         grid-template-columns: 15% 35% 1fr;
     }
 }
