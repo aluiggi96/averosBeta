@@ -43,7 +43,6 @@ const MULTIMEDIA = {
             ],
             plataformasVideo: [],
         },
-        
     ],
     PROXIMOSLANZAMIENTOS: [
         // {
@@ -70,7 +69,6 @@ function mostraListaDisponibles() {
     botonProximos.classList.remove('botonActivo')
     listaDisponibles.style.display = 'grid'
     listaProximos.style.display = 'none'
-
 }
 
 function mostrarListaProximos() {
@@ -99,6 +97,8 @@ function generarListado() {
     listaDeVideoProximos.classList.add('videoArea');
 
     if (MULTIMEDIA.DISPONIBLES.length === 0) {
+        listaDisponibles.classList.add("listaNoDisponibles")
+        listaDisponibles.classList.remove('listaDisponibles')
         listaDisponibles.appendChild(mensajeListaVaciaDisponibles)
     } else {
         var titleAreaMusica = document.createElement('h3')
@@ -108,6 +108,12 @@ function generarListado() {
         var musicasDisponibles = document.createElement('div')
         musicasDisponibles.classList.add('musicasDisponibles')
         listaDeMusicaDisponibles.appendChild(musicasDisponibles)
+        var cards = document.querySelectorAll('.card');
+
+        cards.forEach(function (card) {
+            card.classList.add('cardDisponible');
+        });
+
 
         MULTIMEDIA.DISPONIBLES.forEach(media => {
             if (media.musica === true) {
@@ -115,19 +121,19 @@ function generarListado() {
                 single.classList.add('single')
 
                 const contenido = `
-        <img src="${media.coverURL}">
-        <div class="metadata">
-            <h3>${media.artistas}</h3>
-            <p>${media.nombreCancion}</p>
-        </div>
-        <div class="plataformas">
-            ${media.plataformasMusica.map(plataforma => `
+                <img src="${media.coverURL}">
+                <div class="metadata">
+                <h3>${media.artistas}</h3>
+                <p>${media.nombreCancion}</p>
+                </div>
+                <div class="plataformas">
+                ${media.plataformasMusica.map(plataforma => `
                 <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-${plataforma.nombre.toLowerCase()}"></i>
+                <i class="fab fa-${plataforma.nombre.toLowerCase()}"></i>
                 </a>
-            `).join('')}
-        </div>
-    `
+                `).join('')}
+                </div>
+                `
                 single.innerHTML = contenido
 
                 musicasDisponibles.appendChild(single)
