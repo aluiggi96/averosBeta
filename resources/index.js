@@ -101,9 +101,9 @@ function generarListado() {
         listaDisponibles.classList.remove('listaDisponibles')
         listaDisponibles.appendChild(mensajeListaVaciaDisponibles)
     } else {
-        var titleAreaMusica = document.createElement('h3')
+        var titleAreaMusica = document.createElement('h2')
         titleAreaMusica.classList.add('titleAreaMusica')
-        titleAreaMusica.innerHTML = 'Musica'
+        titleAreaMusica.innerHTML = 'Música'
         listaDeMusicaDisponibles.appendChild(titleAreaMusica)
         var musicasDisponibles = document.createElement('div')
         musicasDisponibles.classList.add('musicasDisponibles')
