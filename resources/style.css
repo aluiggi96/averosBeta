@@ -169,11 +169,6 @@ main {
     width: 100%;
 }
 
-.metadata {
-    display: grid;
-    gap: .5rem;
-}
-
 .plataformas {
     display: flex;
     justify-content: space-around;

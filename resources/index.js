@@ -144,7 +144,7 @@ function generarListado() {
 
                 const contenido = `
                         <img src="${media.coverURL}">
-                        <div class="metadata">
+                        <div>
                         <h3>${media.artistas}</h3>
                         <p>${media.nombreCancion}</p>
                         </div>
@@ -167,7 +167,7 @@ function generarListado() {
 
                 const contenidoVid = `
                         <img src="${media.coverURL}">
-                        <div class="metadata">
+                        <div>
                         <h3>${media.artistas}</h3>
                         <p>${media.nombreCancion}</p>
                         </div>
