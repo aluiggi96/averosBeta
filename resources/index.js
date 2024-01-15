@@ -61,21 +61,32 @@ const botonProximos = document.querySelector(".botonProximos")
 const listaDisponibles = document.querySelector('.listaDisponibles')
 const listaProximos = document.querySelector('.listaProximos')
 
-botonDisponibles.addEventListener('click', mostraListaDisponibles)
+botonDisponibles.addEventListener('click', mostraListaDisponibles);
 botonProximos.addEventListener('click', mostrarListaProximos)
 
 function mostraListaDisponibles() {
-    botonDisponibles.classList.add('botonActivo')
-    botonProximos.classList.remove('botonActivo')
-    listaDisponibles.style.display = 'grid'
-    listaProximos.style.display = 'none'
+    if (!botonDisponibles.classList.contains('botonActivo')) {
+        botonDisponibles.classList.add('botonActivo')
+        botonProximos.classList.remove('botonActivo')
+        listaDisponibles.style.display = 'grid'
+        listaProximos.style.display = 'none'
+    }
 }
 
 function mostrarListaProximos() {
-    botonProximos.classList.add('botonActivo')
-    botonDisponibles.classList.remove('botonActivo')
-    listaDisponibles.style.display = 'none'
-    listaProximos.style.display = 'grid'
+    if (!botonProximos.classList.contains('botonActivo')) {
+        botonProximos.classList.add('botonActivo')
+        botonDisponibles.classList.remove('botonActivo')
+        listaDisponibles.style.display = 'none'
+        listaProximos.style.display = 'grid'
+    }
+}
+
+function contadorTipoMediaDisponible(tipo) {
+    const filtro = MULTIMEDIA.DISPONIBLES.filter(cancion => cancion[tipo] === true)
+    const contador = filtro.length
+
+    return contador
 }
 
 function generarListado() {
@@ -97,24 +108,28 @@ function generarListado() {
     listaDeVideoProximos.classList.add('videoArea');
 
     if (MULTIMEDIA.DISPONIBLES.length === 0) {
-        listaDisponibles.classList.add("listaNoDisponibles")
-        listaDisponibles.classList.remove('listaDisponibles')
+        listaDisponibles.classList.replace('listaDisponibles', 'listaNoDisponibles')
         listaDisponibles.appendChild(mensajeListaVaciaDisponibles)
     } else {
-        var titleAreaMusica = document.createElement('h2')
-        titleAreaMusica.classList.add('titleAreaMusica')
-        titleAreaMusica.innerHTML = 'Música'
-        listaDeMusicaDisponibles.appendChild(titleAreaMusica)
-        var titleAreaVideo = document.createElement('h2')
-        titleAreaVideo.classList.add('titleAreaVideo')
-        titleAreaVideo.innerHTML = 'Video'
-        listaDeVideoDisponibles.appendChild(titleAreaVideo)
-        var musicasDisponibles = document.createElement('div')
-        musicasDisponibles.classList.add('musicasDisponibles')
-        listaDeMusicaDisponibles.appendChild(musicasDisponibles)
-        var videosDisponibles = document.createElement('div')
-        videosDisponibles.classList.add('videosDisponibles')
-        listaDeVideoDisponibles.appendChild(videosDisponibles)
+        if (contadorTipoMediaDisponible('musica') > 0) {
+            var titleAreaMusica = document.createElement('h2')
+            titleAreaMusica.classList.add('titleAreaMusica')
+            titleAreaMusica.innerHTML = 'Música'
+            listaDeMusicaDisponibles.appendChild(titleAreaMusica)
+            var musicasDisponibles = document.createElement('div')
+            musicasDisponibles.classList.add('musicasDisponibles')
+            listaDeMusicaDisponibles.appendChild(musicasDisponibles)
+        }
+        if (contadorTipoMediaDisponible('video') > 0) {
+            var titleAreaVideo = document.createElement('h2')
+            titleAreaVideo.classList.add('titleAreaVideo')
+            titleAreaVideo.innerHTML = 'Video'
+            listaDeVideoDisponibles.appendChild(titleAreaVideo)
+            var videosDisponibles = document.createElement('div')
+            videosDisponibles.classList.add('videosDisponibles')
+            listaDeVideoDisponibles.appendChild(videosDisponibles)
+        }
+
         var cards = document.querySelectorAll('.card');
 
         cards.forEach(function (card) {
@@ -128,44 +143,44 @@ function generarListado() {
                 single.classList.add('single')
 
                 const contenido = `
-                <img src="${media.coverURL}">
-                <div class="metadata">
-                <h3>${media.artistas}</h3>
-                <p>${media.nombreCancion}</p>
-                </div>
-                <div class="plataformas">
-                ${media.plataformasMusica.map(plataforma => `
-                <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-${plataforma.nombre.toLowerCase()}"></i>
-                </a>
-                `).join('')}
-                </div>
-                `
+                        <img src="${media.coverURL}">
+                        <div class="metadata">
+                        <h3>${media.artistas}</h3>
+                        <p>${media.nombreCancion}</p>
+                        </div>
+                        <div class="plataformas">
+                        ${media.plataformasMusica.map(plataforma => `
+                        <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-${plataforma.nombre.toLowerCase()}"></i>
+                        </a>
+                        `).join('')}
+                        </div>
+                        `
                 single.innerHTML = contenido
 
                 musicasDisponibles.appendChild(single)
             }
-            
+
             if (media.video === true) {
                 var singleVid = document.createElement('div')
                 singleVid.classList.add('singleVid')
 
                 const contenidoVid = `
-                <img src="${media.coverURL}">
-                <div class="metadata">
-                <h3>${media.artistas}</h3>
-                <p>${media.nombreCancion}</p>
-                </div>
-                <div class="plataformas">
-                ${media.plataformasVideo.map(plataforma => `
-                <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-${plataforma.nombre.toLowerCase()}"></i>
-                </a>
-                `).join('')}
-                </div>
-                `
+                        <img src="${media.coverURL}">
+                        <div class="metadata">
+                        <h3>${media.artistas}</h3>
+                        <p>${media.nombreCancion}</p>
+                        </div>
+                        <div class="plataformas">
+                        ${media.plataformasVideo.map(plataforma => `
+                        <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-${plataforma.nombre.toLowerCase()}"></i>
+                        </a>
+                        `).join('')}
+                        </div>
+                        `
                 singleVid.innerHTML = contenidoVid
-                
+
                 videosDisponibles.appendChild(singleVid)
             }
             listaDisponibles.appendChild(listaDeMusicaDisponibles);
@@ -179,8 +194,6 @@ function generarListado() {
         listaProximos.appendChild(listaDeMusicaProximos);
         listaProximos.appendChild(listaDeVideoProximos);
     }
-
 }
 
 generarListado();
-
