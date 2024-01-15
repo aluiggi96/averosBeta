@@ -3,19 +3,16 @@ const MULTIMEDIA = {
     DISPONIBLES: [
         {
             musica: true,
-            video: true,
+            video: false,
             artistas: "Averos Music, AddiSonG",
-            nombreCancion: "Ser Un Niño Otra Vez",
-            coverURL: "https://i.scdn.co/image/ab67616d00001e023b4a73b8fcce26dd47b1bb16",
+            nombreCancion: "Sobrenatural",
+            coverURL: "https://i.scdn.co/image/ab67616d00001e0239387b3eb60c238a17dc049c",
             plataformasMusica: [
-                { nombre: "Spotify", url: "https://open.spotify.com/track/5ShabTACl2O5tXVFrClNGE" },
-                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
-                { nombre: "Apple Music", url: "https://music.apple.com/us/album/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1708634683?i=1708634685" }
+                { nombre: "Spotify", url: "https://open.spotify.com/track/3Q6G1iAlw1Cws3RDE96cDL" },
+                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=nqlkZ2DTB_A&si=eD9rs4j5foER_FW_" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/album/sobrenatural-feat-addisong/1717492942?i=1717492943" }
             ],
-            plataformasVideo: [
-                { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
-                { nombre: "Apple Music", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
-            ]
+            plataformasVideo: [],
         },
         {
             musica: true,
@@ -32,16 +29,19 @@ const MULTIMEDIA = {
         },
         {
             musica: true,
-            video: false,
+            video: true,
             artistas: "Averos Music, AddiSonG",
-            nombreCancion: "Sobrenatural",
-            coverURL: "https://i.scdn.co/image/ab67616d00001e0239387b3eb60c238a17dc049c",
+            nombreCancion: "Ser Un Niño Otra Vez",
+            coverURL: "https://i.scdn.co/image/ab67616d00001e023b4a73b8fcce26dd47b1bb16",
             plataformasMusica: [
-                { nombre: "Spotify", url: "https://open.spotify.com/track/3Q6G1iAlw1Cws3RDE96cDL" },
-                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=nqlkZ2DTB_A&si=eD9rs4j5foER_FW_" },
-                { nombre: "Apple Music", url: "https://music.apple.com/us/album/sobrenatural-feat-addisong/1717492942?i=1717492943" }
+                { nombre: "Spotify", url: "https://open.spotify.com/track/5ShabTACl2O5tXVFrClNGE" },
+                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/album/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1708634683?i=1708634685" }
             ],
-            plataformasVideo: [],
+            plataformasVideo: [
+                { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
+            ]
         },
     ],
     PROXIMOSLANZAMIENTOS: [

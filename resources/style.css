@@ -151,7 +151,7 @@ main {
 
 .musicasDisponibles, .videosDisponibles {
     display: grid;
-    gap: 1rem;
+    gap: .75rem;
     overflow-y: scroll;
 }
 
@@ -191,6 +191,6 @@ main {
     }
 
     .single, .singleVid {
-        grid-template-columns: 10% 40% 1fr;
+        grid-template-columns: 10% 35% 1fr;
     }
 }
