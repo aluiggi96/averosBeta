@@ -105,6 +105,9 @@ main {
     text-align: center;
     align-items: center;
     font-weight: bold;
+}
+
+.botonDisponibles, .botonProximos{
     cursor: pointer;
 }
 
