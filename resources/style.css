@@ -189,6 +189,6 @@ main {
     }
 
     .single, .singleVid {
-        grid-template-columns: 10% 40% 1fr;
+        grid-template-columns: 10% 50% 1fr;
     }
 }
