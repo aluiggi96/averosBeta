@@ -15,8 +15,12 @@ i {
 }
 
 @media only screen and (max-width: 680px) {
-    *, i {
+    * {
         font-size: .8rem;
+    }
+
+    i {
+        font-size: large;
     }
 
 }
