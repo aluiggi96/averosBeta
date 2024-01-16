@@ -159,9 +159,9 @@ main {
 
 .single, .singleVid {
     display: grid;
-    gap: 1rem;
+    gap: .5rem;
     align-items: center;
-    grid-template-columns: 15% 45% 1fr;
+    grid-template-columns: 15% 35% 1fr;
 }
 
 .single>img, .singleVid>img {
@@ -188,6 +188,6 @@ main {
     }
 
     .single, .singleVid {
-        grid-template-columns: 10% 50% 1fr;
+        grid-template-columns: 10% 40% 1fr;
     }
 }
