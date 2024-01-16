@@ -61,7 +61,6 @@ main {
     display: grid;
     padding: 1.25rem;
     width: 100%;
-    height: auto;
 }
 
 .cardDisponible {
