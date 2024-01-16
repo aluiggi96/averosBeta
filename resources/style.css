@@ -25,7 +25,7 @@ main {
 .contenido {
     display: grid;
     width: 100%;
-    max-width: 1024px;
+    max-width: 85rem;
     background-color: hsla(0, 0%, 100%, .1);
     backdrop-filter: blur(2rem);
     padding: 1rem;
@@ -41,7 +41,7 @@ main {
 }
 
 .musica {
-    max-height: 50rem;
+    max-height: 60rem;
     display: grid;
     grid-template-rows: 4rem;
 }
@@ -65,7 +65,7 @@ main {
 }
 
 .cardDisponible {
-    max-height: 46rem;
+    max-height: 56rem;
 }
 
 .a-card {
@@ -75,7 +75,7 @@ main {
 
 .containerCover {
     position: relative;
-    max-width: 480px;
+    max-width: 41.875rem;
     aspect-ratio: 1/1;
 }
 
@@ -142,7 +142,7 @@ main {
 
 .musicaArea, .videoArea {
     display: grid;
-    max-height: 20rem;
+    max-height: 18.125rem;
     grid-template-rows: 3rem 1fr;
 }
 
@@ -175,7 +175,7 @@ main {
 }
 
 
-@media only screen and (max-width: 661px) {
+@media only screen and (max-width: 680px) {
     .boxMusica {
         grid-template-columns: 1fr;
     }

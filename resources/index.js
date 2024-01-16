@@ -42,6 +42,81 @@ const MULTIMEDIA = {
                 { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
                 { nombre: "Apple Music", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
             ]
+        },{
+            musica: true,
+            video: true,
+            artistas: "Averos Music, AddiSonG",
+            nombreCancion: "Ser Un Niño Otra Vez",
+            coverURL: "https://i.scdn.co/image/ab67616d00001e023b4a73b8fcce26dd47b1bb16",
+            plataformasMusica: [
+                { nombre: "Spotify", url: "https://open.spotify.com/track/5ShabTACl2O5tXVFrClNGE" },
+                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/album/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1708634683?i=1708634685" }
+            ],
+            plataformasVideo: [
+                { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
+            ]
+        },{
+            musica: true,
+            video: true,
+            artistas: "Averos Music, AddiSonG",
+            nombreCancion: "Ser Un Niño Otra Vez",
+            coverURL: "https://i.scdn.co/image/ab67616d00001e023b4a73b8fcce26dd47b1bb16",
+            plataformasMusica: [
+                { nombre: "Spotify", url: "https://open.spotify.com/track/5ShabTACl2O5tXVFrClNGE" },
+                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/album/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1708634683?i=1708634685" }
+            ],
+            plataformasVideo: [
+                { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
+            ]
+        },{
+            musica: true,
+            video: true,
+            artistas: "Averos Music, AddiSonG",
+            nombreCancion: "Ser Un Niño Otra Vez",
+            coverURL: "https://i.scdn.co/image/ab67616d00001e023b4a73b8fcce26dd47b1bb16",
+            plataformasMusica: [
+                { nombre: "Spotify", url: "https://open.spotify.com/track/5ShabTACl2O5tXVFrClNGE" },
+                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/album/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1708634683?i=1708634685" }
+            ],
+            plataformasVideo: [
+                { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
+            ]
+        },{
+            musica: true,
+            video: true,
+            artistas: "Averos Music, AddiSonG",
+            nombreCancion: "Ser Un Niño Otra Vez",
+            coverURL: "https://i.scdn.co/image/ab67616d00001e023b4a73b8fcce26dd47b1bb16",
+            plataformasMusica: [
+                { nombre: "Spotify", url: "https://open.spotify.com/track/5ShabTACl2O5tXVFrClNGE" },
+                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/album/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1708634683?i=1708634685" }
+            ],
+            plataformasVideo: [
+                { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
+            ]
+        },{
+            musica: true,
+            video: true,
+            artistas: "Averos Music, AddiSonG",
+            nombreCancion: "Ser Un Niño Otra Vez",
+            coverURL: "https://i.scdn.co/image/ab67616d00001e023b4a73b8fcce26dd47b1bb16",
+            plataformasMusica: [
+                { nombre: "Spotify", url: "https://open.spotify.com/track/5ShabTACl2O5tXVFrClNGE" },
+                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/album/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1708634683?i=1708634685" }
+            ],
+            plataformasVideo: [
+                { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
+                { nombre: "Apple Music", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
+            ]
         },
     ],
     PROXIMOSLANZAMIENTOS: [
@@ -52,8 +127,6 @@ const MULTIMEDIA = {
         // }
     ]
 }
-
-
 
 const botonDisponibles = document.querySelector(".botonDisponibles")
 const botonProximos = document.querySelector(".botonProximos")
@@ -86,9 +159,7 @@ function mostrarListaProximos() {
 // Verificar cuantos tipo de ('musica' o 'video') existen
 function contadorTipoMediaDisponible(tipo) {
     const filtro = MULTIMEDIA.DISPONIBLES.filter(cancion => cancion[tipo] === true)
-    const contador = filtro.length
-
-    return contador
+    return filtro
 }
 
 // Generador de media en Disponible y Proximos Lanzamientos
@@ -114,7 +185,7 @@ function generarListado() {
         listaDisponibles.classList.replace('listaDisponibles', 'listaNoDisponibles')
         listaDisponibles.appendChild(mensajeListaVaciaDisponibles)
     } else {
-        if (contadorTipoMediaDisponible('musica') > 0) {
+        if (contadorTipoMediaDisponible('musica').length > 0) {
             var titleAreaMusica = document.createElement('h2')
             titleAreaMusica.classList.add('titleAreaMusica')
             titleAreaMusica.innerHTML = 'Música'
@@ -122,26 +193,9 @@ function generarListado() {
             var musicasDisponibles = document.createElement('div')
             musicasDisponibles.classList.add('musicasDisponibles')
             listaDeMusicaDisponibles.appendChild(musicasDisponibles)
-        }
-        if (contadorTipoMediaDisponible('video') > 0) {
-            var titleAreaVideo = document.createElement('h2')
-            titleAreaVideo.classList.add('titleAreaVideo')
-            titleAreaVideo.innerHTML = 'Video'
-            listaDeVideoDisponibles.appendChild(titleAreaVideo)
-            var videosDisponibles = document.createElement('div')
-            videosDisponibles.classList.add('videosDisponibles')
-            listaDeVideoDisponibles.appendChild(videosDisponibles)
-        }
+            listaDisponibles.appendChild(listaDeMusicaDisponibles);
 
-        var cards = document.querySelectorAll('.card');
-
-        cards.forEach(function (card) {
-            card.classList.add('cardDisponible');
-        });
-
-
-        MULTIMEDIA.DISPONIBLES.forEach(media => {
-            if (media.musica === true) {
+            contadorTipoMediaDisponible('musica').forEach(media => {
                 var single = document.createElement('div')
                 single.classList.add('single')
 
@@ -162,9 +216,20 @@ function generarListado() {
                 single.innerHTML = contenido
 
                 musicasDisponibles.appendChild(single)
-            }
+            })
+        }
 
-            if (media.video === true) {
+        if (contadorTipoMediaDisponible('video').length > 0) {
+            var titleAreaVideo = document.createElement('h2')
+            titleAreaVideo.classList.add('titleAreaVideo')
+            titleAreaVideo.innerHTML = 'Video'
+            listaDeVideoDisponibles.appendChild(titleAreaVideo)
+            var videosDisponibles = document.createElement('div')
+            videosDisponibles.classList.add('videosDisponibles')
+            listaDeVideoDisponibles.appendChild(videosDisponibles)
+            listaDisponibles.appendChild(listaDeVideoDisponibles);
+
+            contadorTipoMediaDisponible('video').forEach(media => {
                 var singleVid = document.createElement('div')
                 singleVid.classList.add('singleVid')
 
@@ -185,10 +250,14 @@ function generarListado() {
                 singleVid.innerHTML = contenidoVid
 
                 videosDisponibles.appendChild(singleVid)
-            }
-            listaDisponibles.appendChild(listaDeMusicaDisponibles);
-            listaDisponibles.appendChild(listaDeVideoDisponibles);
-        })
+            })
+        }
+
+        var cards = document.querySelectorAll('.card');
+
+        cards.forEach(function (card) {
+            card.classList.add('cardDisponible');
+        });
     }
 
     if (MULTIMEDIA.PROXIMOSLANZAMIENTOS.length === 0) {
