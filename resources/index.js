@@ -55,15 +55,16 @@ const MULTIMEDIA = {
 
 
 
-// Funciones para cambiar entre el listado de multimedia disponible y de proximos
 const botonDisponibles = document.querySelector(".botonDisponibles")
 const botonProximos = document.querySelector(".botonProximos")
 const listaDisponibles = document.querySelector('.listaDisponibles')
 const listaProximos = document.querySelector('.listaProximos')
 
+// Funciones para cambiar entre el listado de multimedia disponible y de proximos
 botonDisponibles.addEventListener('click', mostraListaDisponibles);
 botonProximos.addEventListener('click', mostrarListaProximos)
 
+// Funciones de cada boton y sus acciones respectivas
 function mostraListaDisponibles() {
     if (!botonDisponibles.classList.contains('botonActivo')) {
         botonDisponibles.classList.add('botonActivo')
@@ -82,6 +83,7 @@ function mostrarListaProximos() {
     }
 }
 
+// Verificar cuantos tipo de ('musica' o 'video') existen
 function contadorTipoMediaDisponible(tipo) {
     const filtro = MULTIMEDIA.DISPONIBLES.filter(cancion => cancion[tipo] === true)
     const contador = filtro.length
@@ -89,6 +91,7 @@ function contadorTipoMediaDisponible(tipo) {
     return contador
 }
 
+// Generador de media en Disponible y Proximos Lanzamientos
 function generarListado() {
     var listaDeMusicaDisponibles = document.createElement('div');
     var listaDeVideoDisponibles = document.createElement('div');
