@@ -13,3 +13,9 @@ h2 {
 i {
     font-size: xx-large;
 }
+
+@media only screen and (max-width: 680px) {
+    * {
+        font-size: small;
+    }
+}
