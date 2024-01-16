@@ -186,8 +186,4 @@ main {
     .a-card {
         height: auto;
     }
-
-    .single, .singleVid {
-        grid-template-columns: 10% 40% 1fr;
-    }
 }
