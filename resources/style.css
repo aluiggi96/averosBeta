@@ -28,6 +28,7 @@ main {
     max-width: 85rem;
     background-color: hsla(0, 0%, 100%, .1);
     backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
     padding: 1rem;
     margin: 0 1rem;
     border-radius: 2rem;
