@@ -46,9 +46,9 @@ const MULTIMEDIA = {
     ],
     PROXIMOSLANZAMIENTOS: [
         // {
-        //   artistas: "",
-        //   nombreCancion: "",
-        //   coverURL: "imagenCover"
+        //   artistas: "Averos Music, AddiSonG",
+        //   nombreCancion: "Sobrenatural",
+        //   coverURL: "https://i.scdn.co/image/ab67616d00001e0239387b3eb60c238a17dc049c",
         // }
     ]
 }
@@ -85,6 +85,14 @@ function mostrarListaProximos() {
 function contadorTipoMediaDisponible(tipo) {
     const filtro = MULTIMEDIA.DISPONIBLES.filter(cancion => cancion[tipo] === true)
     return filtro
+}
+
+// Ajuste al area disponible
+function ajusteAUnaSolaAreaDisponible(listaAAjustar) {
+    if (listaAAjustar.childNodes.length < 2) {
+        listaAAjustar.classList.replace('listaDisponibles', 'soloUnaAreaDisponible')
+        listaAAjustar.childNodes[0].style.maxHeight = '36.250rem'
+    }
 }
 
 // Generador de media en Disponible y Proximos Lanzamientos
@@ -177,9 +185,10 @@ function generarListado() {
                 videosDisponibles.appendChild(singleVid)
             })
         }
+        
+        ajusteAUnaSolaAreaDisponible(listaDisponibles)
 
         var cards = document.querySelectorAll('.card');
-
         cards.forEach(function (card) {
             card.classList.add('cardDisponible');
         });
