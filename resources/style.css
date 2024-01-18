@@ -106,7 +106,8 @@ main {
     align-items: center;
 }
 
-.botonDisponibles, .botonProximos{
+.botonDisponibles,
+.botonProximos {
     cursor: pointer;
 }
 
@@ -121,7 +122,8 @@ main {
     color: hsl(0, 0%, 33%);
 }
 
-.listaNoDisponibles, .soloUnaAreaDisponible{
+.listaNoDisponibles,
+.soloUnaAreaDisponible {
     display: grid;
 }
 
@@ -141,38 +143,136 @@ main {
     display: none;
 }
 
-.musicaArea, .videoArea {
+.musicaArea,
+.videoArea {
     display: grid;
     max-height: 18.125rem;
     grid-template-rows: 3rem 1fr;
 }
 
-.titleAreaMusica, .titleAreaVideo {
+.titleAreaMusica,
+.titleAreaVideo {
     display: grid;
     justify-content: center;
     align-items: center;
 }
 
-.musicasDisponibles, .videosDisponibles {
+.musicasDisponibles,
+.videosDisponibles {
     display: grid;
     gap: .75rem;
     overflow-y: scroll;
 }
 
-.single, .singleVid {
+.single,
+.singleVid {
     display: grid;
     gap: .5rem;
     align-items: center;
     grid-template-columns: 10% 40% 1fr;
 }
 
-.single>img, .singleVid>img {
+.single>img,
+.singleVid>img {
     width: 100%;
 }
 
 .plataformas {
     display: flex;
     justify-content: space-around;
+}
+
+.seccion-tab {
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 75% 1fr;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem 1rem;
+    gap: 1rem;
+}
+
+.carrousel {
+    display: grid;
+    grid-template-rows: 5rem 1fr 3rem;
+    padding: 1rem;
+    background-color: hsla(0, 0%, 0%, .75);
+    border-radius: 2rem;
+    gap: .5rem;
+}
+
+.carrousel h2 {
+    display: grid;
+    margin: auto;
+    text-wrap: pretty;
+    align-items: center;
+    text-align: center;
+}
+
+.slides {
+    position: relative;
+}
+
+.slides img {
+    width: 100%;
+}
+
+#prev, #next {
+    display: grid;
+    padding: .5rem;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: hsla(0, 0%, 0%, .75);
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+.boxDotIndex{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    bottom: 5%;
+}
+
+.dotIndex {
+    height: 15px;
+    width: 15px;
+    background-color: hsla(0, 0%, 50%, .75);
+    border-radius: 50%;
+}
+
+.dotActivo {
+    background-color: hsla(0, 0%, 0%, .75);
+    aspect-ratio: 1/1;
+    width: 25px;
+    height: 25px;
+}
+
+.botonComprar{
+    margin: auto;
+    display: grid;
+    align-items: center;
+    padding: 0 3rem;
+    background-color: hsla(0, 0%, 100%, .8);
+    height: 100%;
+    font-size: 1.125rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    color: hsl(0, 0%, 33%);
 }
 
 
@@ -183,5 +283,14 @@ main {
 
     .musica {
         max-height: 100rem;
+    }
+
+    .items {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .carrousel h2 {
+        font-size: medium;
     }
 }

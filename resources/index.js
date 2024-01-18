@@ -55,10 +55,26 @@ const MULTIMEDIA = {
     ]
 }
 
+const MERCANCIAS = {
+    ARTICULOS: [
+        {
+            nombreArticulo: 'Gorra Oficial Averos (Nombre Personalizado)',
+            imagenesArticulo: [
+                "https://i.etsystatic.com/45506732/r/il/3e952a/5413760051/il_794xN.5413760051_e1ij.jpg",
+                "https://i.etsystatic.com/45506732/r/il/27aa4e/5429970779/il_794xN.5429970779_n4t0.jpg",
+                "https://i.etsystatic.com/45506732/r/il/a92b91/5429970479/il_794xN.5429970479_e36c.jpg",
+                "https://i.etsystatic.com/45506732/r/il/fea35f/5381809840/il_794xN.5381809840_dre5.jpg",
+            ],
+            enlaceComprar: 'https://www.etsy.com/listing/1584866763/official-averos-project-cap',
+        }
+    ]
+}
+
 const botonDisponibles = document.querySelector(".botonDisponibles")
 const botonProximos = document.querySelector(".botonProximos")
 const listaDisponibles = document.querySelector('.listaDisponibles')
 const listaProximos = document.querySelector('.listaProximos')
+// const botonDropUpTab = document.querySelector('.botonMostrarOcultar')
 
 // Funciones para cambiar entre el listado de multimedia disponible y de proximos
 botonDisponibles.addEventListener('click', mostraListaDisponibles);
@@ -205,3 +221,9 @@ function generarListado() {
 }
 
 generarListado();
+
+// funcion del boton drop y creacion de carroules 
+
+
+
+// const items = document.querySelector('items')
