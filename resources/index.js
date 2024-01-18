@@ -46,6 +46,8 @@ const MULTIMEDIA = {
     ],
     PROXIMOSLANZAMIENTOS: [
         // {
+        //   musica: false
+        //   video: false
         //   artistas: "Averos Music, AddiSonG",
         //   nombreCancion: "Sobrenatural",
         //   coverURL: "https://i.scdn.co/image/ab67616d00001e0239387b3eb60c238a17dc049c",
@@ -185,7 +187,7 @@ function generarListado() {
                 videosDisponibles.appendChild(singleVid)
             })
         }
-        
+
         ajusteAUnaSolaAreaDisponible(listaDisponibles)
 
         var cards = document.querySelectorAll('.card');
