@@ -23,4 +23,8 @@ i {
         font-size: x-large;
     }
 
+    .tituloSeccion, .titleAreaMusica, .titleAreaVideo{
+        font-size: medium;
+    }
+
 }
