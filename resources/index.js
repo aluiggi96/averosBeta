@@ -74,7 +74,6 @@ const botonDisponibles = document.querySelector(".botonDisponibles")
 const botonProximos = document.querySelector(".botonProximos")
 const listaDisponibles = document.querySelector('.listaDisponibles')
 const listaProximos = document.querySelector('.listaProximos')
-// const botonDropUpTab = document.querySelector('.botonMostrarOcultar')
 
 // Funciones para cambiar entre el listado de multimedia disponible y de proximos
 botonDisponibles.addEventListener('click', mostraListaDisponibles);
@@ -224,6 +223,17 @@ generarListado();
 
 // funcion del boton drop y creacion de carroules 
 
+const botonDropUpTab = document.querySelector('.botonMostrarOcultar')
+const infoTab = document.querySelector('.infoTab')
 
+botonDropUpTab.addEventListener('click', mostrarOcultarInformacion)
 
-// const items = document.querySelector('items')
+function mostrarOcultarInformacion() {
+    if (infoTab.style.display === 'none') {
+        botonDropUpTab.classList.replace('fa-chevron-circle-down', 'fa-chevron-circle-up')
+        infoTab.style.display = 'grid'
+    } else {
+        botonDropUpTab.classList.replace('fa-chevron-circle-up', 'fa-chevron-circle-down')
+        infoTab.style.display = 'none'
+    }
+}

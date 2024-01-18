@@ -188,8 +188,7 @@ main {
     grid-template-columns: 75% 1fr;
 }
 
-.items {
-    display: grid;
+.infoTab {
     grid-template-columns: repeat(2, 1fr);
     padding: 0 1rem 1rem;
     gap: 1rem;
@@ -285,8 +284,7 @@ main {
         max-height: 100rem;
     }
 
-    .items {
-        display: grid;
+    .infoTab {
         grid-template-columns: 1fr;
     }
 
