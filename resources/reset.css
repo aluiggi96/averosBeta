@@ -14,6 +14,11 @@ i {
     font-size: xx-large;
 }
 
+svg {
+    height: 2.5rem;
+    fill: #f5f5f5;
+}
+
 @media only screen and (max-width: 680px) {
     * {
         font-size: .8rem;
@@ -25,6 +30,10 @@ i {
 
     .tituloSeccion, .titleAreaMusica, .titleAreaVideo{
         font-size: medium;
+    }
+    
+    svg {
+        height: 1.5rem;
     }
 
 }
