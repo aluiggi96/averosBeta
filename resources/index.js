@@ -184,7 +184,7 @@ function generarListado() {
                     if (iconoPlataforma) {
                         return `
                         <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
-                            <svg xmlns="${iconoPlataforma.xmlns}" viewBox="${iconoPlataforma.viewBox}">
+                            <svg xmlns="${ICONOS.xmlns}" viewBox="${iconoPlataforma.viewBox}">
                                 <path d="${iconoPlataforma.d}"/></path>
                             </svg>
                         </a>

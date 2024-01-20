@@ -15,7 +15,7 @@ i {
 }
 
 svg {
-    height: 2.5rem;
+    height: 2.25rem;
     fill: #f5f5f5;
 }
 
@@ -32,8 +32,6 @@ svg {
         font-size: medium;
     }
 
-    svg {
-        height: 2rem;
-    }
+    
 
 }
