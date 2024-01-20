@@ -100,7 +100,7 @@ main {
 
 .botones {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     text-align: center;
     align-items: center;
