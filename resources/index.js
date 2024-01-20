@@ -9,7 +9,7 @@ const MULTIMEDIA = {
             coverURL: "https://i.scdn.co/image/ab67616d00001e0239387b3eb60c238a17dc049c",
             plataformasMusica: [
                 { nombre: "Spotify", url: "https://open.spotify.com/track/3Q6G1iAlw1Cws3RDE96cDL" },
-                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=nqlkZ2DTB_A&si=eD9rs4j5foER_FW_" },
+                { nombre: "YTMusic", url: "https://music.youtube.com/watch?v=nqlkZ2DTB_A&si=eD9rs4j5foER_FW_" },
                 { nombre: "Apple", url: "https://music.apple.com/us/album/sobrenatural-feat-addisong/1717492942?i=1717492943" }
             ],
             plataformasVideo: [],
@@ -22,7 +22,7 @@ const MULTIMEDIA = {
             coverURL: "https://i.scdn.co/image/ab67616d00001e02ff386fdff9996b6ccc21a31c",
             plataformasMusica: [
                 { nombre: "Spotify", url: "https://open.spotify.com/track/62JHWhcS2ABNSsve3K7jWg" },
-                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=BdHwIT-m1UY&si=QHTelwTnLW9c0MJd" },
+                { nombre: "YTMusic", url: "https://music.youtube.com/watch?v=BdHwIT-m1UY&si=QHTelwTnLW9c0MJd" },
                 { nombre: "Apple", url: "https://music.apple.com/us/album/primera-vez-feat-fernando-ville/1715099089?i=1715099090" }
             ],
             plataformasVideo: [],
@@ -35,12 +35,13 @@ const MULTIMEDIA = {
             coverURL: "https://i.scdn.co/image/ab67616d00001e023b4a73b8fcce26dd47b1bb16",
             plataformasMusica: [
                 { nombre: "Spotify", url: "https://open.spotify.com/track/5ShabTACl2O5tXVFrClNGE" },
-                { nombre: "YouTube", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
+                { nombre: "YTMusic", url: "https://music.youtube.com/watch?v=83hsamJu_Qk&si=2S1FHXtLfXWB_ROY" },
                 { nombre: "Apple", url: "https://music.apple.com/us/album/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1708634683?i=1708634685" }
             ],
             plataformasVideo: [
                 { nombre: "YouTube", url: "https://youtu.be/-xOs7F91hjQ?si=Ra1gkcD5roDwAR9L" },
-                { nombre: "Apple", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" }
+                { nombre: "Apple", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" },
+                { nombre: "Tidal", url: "https://tidal.com/browse/video/336982814" }
             ]
         }
     ],
@@ -71,21 +72,28 @@ const MERCANCIAS = {
 }
 
 const ICONOS = {
+    xmlns: "http://www.w3.org/2000/svg",
     spotify: {
-        xmlns: "http://www.w3.org/2000/svg",
         viewBox: "0 0 496 512",
-        d: "M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z",
+        d: 'M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z',
+    },
+    ytmusic: {
+        viewBox: "0 0 100 100",
+        d: `M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM23.75 50C23.75 64.4975 35.5025 76.25 50 76.25C64.4975 76.25 76.25 64.4975 76.25 50C76.25 35.5025 64.4975 23.75 50 23.75C35.5025 23.75 23.75 35.5025 23.75 50Z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 74C63.2548 74 74 63.2548 74 50C74 36.7452 63.2548 26 50 26C36.7452 26 26 36.7452 26 50C26 63.2548 36.7452 74 50 74ZM63 49.5L41 37V63L63 49.5Z"/>`
     },
     youtube: {
-        xmlns: "http://www.w3.org/2000/svg",
         viewBox: "0 0 576 512",
         d: "M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z",
     },
     apple: {
-        xmlns: "http://www.w3.org/2000/svg",
         viewBox: "0 0 384 512",
         d: "M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
-    }
+    },
+    tidal: {
+        viewBox: "0 0 176 177",
+        d: "M-0.489,59.215L28.787,88.42l29.276-29.205L28.787,30.011L-0.489,59.215z M58.224,59.215L87.5,88.42l29.276-29.205 L87.5,30.011L58.224,59.215z M146.213,30.011l-29.276,29.205l29.276,29.205l29.276-29.205L146.213,30.011z M58.224,117.784 L87.5,146.989l29.276-29.205L87.5,88.58L58.224,117.784z"
+    },
 }
 
 const botonDisponibles = document.querySelector(".botonDisponibles")
@@ -94,27 +102,24 @@ const listaDisponibles = document.querySelector('.listaDisponibles')
 const listaProximos = document.querySelector('.listaProximos')
 
 // Funciones para cambiar entre el listado de multimedia disponible y de proximos
-botonDisponibles.addEventListener('click', mostraListaDisponibles);
-botonProximos.addEventListener('click', mostrarListaProximos)
+// Asignar eventos a los botones
+botonDisponibles.addEventListener('click', () => mostrarLista('disponibles'));
+botonProximos.addEventListener('click', () => mostrarLista('proximos'));
 
-// Funciones de cada boton y sus acciones respectivas
-function mostraListaDisponibles() {
-    if (!botonDisponibles.classList.contains('botonActivo')) {
-        botonDisponibles.classList.add('botonActivo')
-        botonProximos.classList.remove('botonActivo')
-        listaDisponibles.style.display = 'grid'
-        listaProximos.style.display = 'none'
-    }
+// Función genérica para mostrar la lista
+function mostrarLista(tipo) {
+    const listaMostrar = tipo === 'disponibles' ? listaDisponibles : listaProximos;
+    const listaOcultar = tipo === 'disponibles' ? listaProximos : listaDisponibles;
+
+    // Agregar clase activa al botón clickeado y removerla del otro
+    botonDisponibles.classList.toggle('botonActivo', tipo === 'disponibles');
+    botonProximos.classList.toggle('botonActivo', tipo === 'proximos');
+
+    // Mostrar la lista correspondiente y ocultar la otra
+    listaMostrar.style.display = 'grid';
+    listaOcultar.style.display = 'none';
 }
 
-function mostrarListaProximos() {
-    if (!botonProximos.classList.contains('botonActivo')) {
-        botonProximos.classList.add('botonActivo')
-        botonDisponibles.classList.remove('botonActivo')
-        listaDisponibles.style.display = 'none'
-        listaProximos.style.display = 'grid'
-    }
-}
 
 // Verificar cuantos tipo de ('musica' o 'video') existen
 function contadorTipoMediaDisponible(tipo) {
@@ -187,7 +192,8 @@ function generarListado() {
                     } else {
                         console.error(`La plataforma ${plataforma.nombre.toLowerCase()} no está definida en ICONOS.`);
                         return ''; // Puedes ajustar esto según tus necesidades
-                    }}).join('')}
+                    }
+                }).join('')}
                         </div>
                         `
                 single.innerHTML = contenido
@@ -222,7 +228,7 @@ function generarListado() {
                     if (iconoPlataforma) {
                         return `
                         <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
-                            <svg xmlns="${iconoPlataforma.xmlns}" viewBox="${iconoPlataforma.viewBox}">
+                            <svg xmlns="${ICONOS.xmlns}" viewBox="${iconoPlataforma.viewBox}">
                                 <path d="${iconoPlataforma.d}"/></path>
                             </svg>
                         </a>
@@ -230,7 +236,8 @@ function generarListado() {
                     } else {
                         console.error(`La plataforma ${plataforma.nombre.toLowerCase()} no está definida en ICONOS.`);
                         return ''; // Puedes ajustar esto según tus necesidades
-                    }}).join('')}
+                    }
+                }).join('')}
                         </div>
                         `
                 singleVid.innerHTML = contenidoVid
