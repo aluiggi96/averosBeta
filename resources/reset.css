@@ -31,9 +31,9 @@ svg {
     .tituloSeccion, .titleAreaMusica, .titleAreaVideo{
         font-size: medium;
     }
-    
+
     svg {
-        height: 1.5rem;
+        height: 2rem;
     }
 
 }
