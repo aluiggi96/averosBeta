@@ -56,20 +56,46 @@ const MULTIMEDIA = {
     ]
 }
 
-const MERCANCIAS = {
-    ARTICULOS: [
-        {
-            nombreArticulo: 'Gorra Oficial Averos (Nombre Personalizado)',
-            imagenesArticulo: [
-                "https://i.etsystatic.com/45506732/r/il/3e952a/5413760051/il_794xN.5413760051_e1ij.jpg",
-                "https://i.etsystatic.com/45506732/r/il/27aa4e/5429970779/il_794xN.5429970779_n4t0.jpg",
-                "https://i.etsystatic.com/45506732/r/il/a92b91/5429970479/il_794xN.5429970479_e36c.jpg",
-                "https://i.etsystatic.com/45506732/r/il/fea35f/5381809840/il_794xN.5381809840_dre5.jpg",
-            ],
-            enlaceComprar: 'https://www.etsy.com/listing/1584866763/official-averos-project-cap',
-        }
-    ]
-}
+const MERCANCIAS = [
+    {
+        nombreArticulo: `Gorra Oficial Averos<br>(Nombre Personalizado)`,
+        imagenesArticulo: [
+            "https://i.etsystatic.com/45506732/r/il/3cd38f/5381809884/il_794xN.5381809884_rkwx.jpg",
+            "https://i.etsystatic.com/45506732/r/il/27aa4e/5429970779/il_794xN.5429970779_n4t0.jpg",
+            "https://i.etsystatic.com/45506732/r/il/a92b91/5429970479/il_794xN.5429970479_e36c.jpg",
+            "https://i.etsystatic.com/45506732/r/il/fea35f/5381809840/il_794xN.5381809840_dre5.jpg",
+            "https://i.etsystatic.com/45506732/r/il/93046c/5429970409/il_794xN.5429970409_e2my.jpg",
+            "https://i.etsystatic.com/45506732/r/il/9bd999/5381809698/il_794xN.5381809698_dvqn.jpg",
+        ],
+        enlaceComprar: 'https://www.etsy.com/listing/1584866763/official-averos-project-cap',
+    },
+    {
+        nombreArticulo: `Sudaderas Cuello Redondo<br>Camaleon Averos`,
+        imagenesArticulo: [
+            "https://i.etsystatic.com/45506732/r/il/3e952a/5413760051/il_794xN.5413760051_e1ij.jpg",
+            "https://i.etsystatic.com/45506732/r/il/4301a1/5365593994/il_794xN.5365593994_pj67.jpg",
+            "https://i.etsystatic.com/45506732/r/il/459933/5413757173/il_794xN.5413757173_ppyh.jpg",
+            "https://i.etsystatic.com/45506732/r/il/f2f2c8/5413756861/il_794xN.5413756861_p248.jpg",
+            "https://i.etsystatic.com/45506732/r/il/e86a7d/5413757279/il_794xN.5413757279_no20.jpg",
+            "https://i.etsystatic.com/45506732/r/il/023327/5365590538/il_794xN.5365590538_fpid.jpg",
+            "https://i.etsystatic.com/45506732/r/il/c8543f/5413758231/il_794xN.5413758231_hqxu.jpg",
+        ],
+        enlaceComprar: 'https://www.etsy.com/listing/1567541386/chameleon-crewneck-sweatshirt-stylish',
+    },
+    {
+        nombreArticulo: `Project Averos Official Hoodie<br>LIMITED EDITION`,
+        imagenesArticulo: [
+            "https://i.etsystatic.com/45506732/r/il/289ebc/5653578961/il_1588xN.5653578961_80h3.jpg",
+            "https://i.etsystatic.com/45506732/r/il/259b18/5605315088/il_1588xN.5605315088_qxxg.jpg",
+            "https://i.etsystatic.com/45506732/r/il/e89abd/5605321642/il_1588xN.5605321642_olzw.jpg",
+            "https://i.etsystatic.com/45506732/r/il/31dd45/5653578095/il_1588xN.5653578095_7bbc.jpg",
+            "https://i.etsystatic.com/45506732/r/il/c01b8e/5605501568/il_794xN.5605501568_jg07.jpg",
+        ],
+        enlaceComprar: 'https://www.etsy.com/listing/1638805997/project-averos-official-hoodie-limited',
+    },
+];
+
+
 
 const ICONOS = {
     xmlns: "http://www.w3.org/2000/svg",
@@ -80,7 +106,7 @@ const ICONOS = {
     ytmusic: {
         viewBox: "0 0 100 100",
         d: `M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM23.75 50C23.75 64.4975 35.5025 76.25 50 76.25C64.4975 76.25 76.25 64.4975 76.25 50C76.25 35.5025 64.4975 23.75 50 23.75C35.5025 23.75 23.75 35.5025 23.75 50Z"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 74C63.2548 74 74 63.2548 74 50C74 36.7452 63.2548 26 50 26C36.7452 26 26 36.7452 26 50C26 63.2548 36.7452 74 50 74ZM63 49.5L41 37V63L63 49.5Z"/>`
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 74C63.2548 74 74 63.2548 74 50C74 36.7452 63.2548 26 50 26C36.7452 26 26 36.7452 26 50C26 63.2548 36.7452 74 50 74ZM63 49.5L41 37V63L63 49.5Z" />`
     },
     youtube: {
         viewBox: "0 0 576 512",
@@ -173,13 +199,13 @@ function generarListado() {
                 single.classList.add('single')
 
                 const contenido = `
-                        <img src="${media.coverURL}">
-                        <div>
-                            <h3>${media.artistas}</h3>
-                            <p>${media.nombreCancion}</p>
-                        </div>
-                        <div class="plataformas">
-                        ${media.plataformasMusica.map(plataforma => {
+                                                <img src="${media.coverURL}">
+                                                    <div>
+                                                        <h3>${media.artistas}</h3>
+                                                        <p>${media.nombreCancion}</p>
+                                                    </div>
+                                                    <div class="plataformas">
+                                                        ${media.plataformasMusica.map(plataforma => {
                     const iconoPlataforma = ICONOS[plataforma.nombre.toLowerCase()];
                     if (iconoPlataforma) {
                         return `
@@ -194,8 +220,8 @@ function generarListado() {
                         return ''; // Puedes ajustar esto según tus necesidades
                     }
                 }).join('')}
-                        </div>
-                        `
+                                                    </div>
+                                                    `
                 single.innerHTML = contenido
 
                 musicasDisponibles.appendChild(single)
@@ -217,13 +243,13 @@ function generarListado() {
                 singleVid.classList.add('singleVid')
 
                 const contenidoVid = `
-                        <img src="${media.coverURL}">
-                        <div>
-                        <h3>${media.artistas}</h3>
-                        <p>${media.nombreCancion}</p>
-                        </div>
-                        <div class="plataformas">
-                        ${media.plataformasVideo.map(plataforma => {
+                                                    <img src="${media.coverURL}">
+                                                        <div>
+                                                            <h3>${media.artistas}</h3>
+                                                            <p>${media.nombreCancion}</p>
+                                                        </div>
+                                                        <div class="plataformas">
+                                                            ${media.plataformasVideo.map(plataforma => {
                     const iconoPlataforma = ICONOS[plataforma.nombre.toLowerCase()];
                     if (iconoPlataforma) {
                         return `
@@ -238,8 +264,8 @@ function generarListado() {
                         return ''; // Puedes ajustar esto según tus necesidades
                     }
                 }).join('')}
-                        </div>
-                        `
+                                                        </div>
+                                                        `
                 singleVid.innerHTML = contenidoVid
 
                 videosDisponibles.appendChild(singleVid)
@@ -264,7 +290,9 @@ function generarListado() {
 
 generarListado();
 
-// funcion del boton drop y creacion de carroules 
+////////////////////////////////////////////////////////////////////////////////////
+
+// funcion del boton drop para las tabs
 
 const botonDropUpTab = document.querySelector('.botonMostrarOcultar');
 const infoTab = document.querySelector('.infoTab');
@@ -276,3 +304,80 @@ function mostrarOcultarInformacion() {
     botonDropUpTab.classList.toggle('fa-chevron-circle-up');
     infoTab.style.display = infoTab.style.display === 'none' ? 'grid' : 'none';
 }
+
+// Carrouseles en Merch
+
+function crearCarrouselesMercaderia() {
+    var infoTabMerch = document.querySelector('.infoTabMerch');
+
+    MERCANCIAS.forEach(mercancia => {
+        var imagenIndex = 0;
+
+        const contenidoMerch = `
+                                                        <div class="carrousel">
+                                                            <h2>${mercancia.nombreArticulo}</h2>
+                                                            <div class="slides">
+                                                                <img src="${mercancia.imagenesArticulo[imagenIndex]}">
+                                                                    <a class="prevImagen">❮</a>
+                                                                    <a class="nextImagen">❯</a>
+                                                                    <div class="boxDotIndex"></div>
+                                                            </div>
+                                                            <a class="botonComprar" href="${mercancia.enlaceComprar}">
+                                                                Comprar/Buy
+                                                            </a>
+                                                        </div>
+                                                        `;
+
+        infoTabMerch.innerHTML += contenidoMerch;
+    });
+
+    // Obtén todas las instancias de carrousel después de agregarlos al DOM
+    var carrousels = document.querySelectorAll('.carrousel');
+
+
+    carrousels.forEach((carrousel, index) => {
+        var imagenIndex = 0;
+        var prevImagen = carrousel.querySelector('.prevImagen');
+        var nextImagen = carrousel.querySelector('.nextImagen');
+        var slidesImg = carrousel.querySelector('.slides img');
+        var boxDotIndex = carrousel.querySelector('.boxDotIndex');
+
+        MERCANCIAS[index].imagenesArticulo.forEach((imagen, i) => {
+            var dot = document.createElement('div');
+            dot.className = 'dotIndex' + (i === 0 ? ' dotActivo' : '');
+            dot.addEventListener('click', function () {
+                imagenIndex = i;
+                actualizarImagen();
+            });
+            boxDotIndex.appendChild(dot);
+        });
+
+
+        prevImagen.addEventListener('click', function () {
+            imagenIndex--;
+            actualizarImagen();
+        });
+
+        nextImagen.addEventListener('click', function () {
+            imagenIndex++;
+            actualizarImagen();
+        });
+
+        // Función para actualizar la imagen actual
+        function actualizarImagen() {
+            var mercancia = MERCANCIAS[index];
+            if (imagenIndex < 0) {
+                imagenIndex = mercancia.imagenesArticulo.length - 1;
+            } else if (imagenIndex >= mercancia.imagenesArticulo.length) {
+                imagenIndex = 0;
+            }
+            slidesImg.src = mercancia.imagenesArticulo[imagenIndex];
+
+            boxDotIndex.querySelectorAll('.dotIndex').forEach((dot, i) => {
+                dot.classList.toggle('dotActivo', i === imagenIndex);
+            });
+        }
+    });
+}
+
+crearCarrouselesMercaderia();

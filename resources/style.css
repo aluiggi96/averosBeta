@@ -189,8 +189,12 @@ main {
     grid-template-columns: 75% 1fr;
 }
 
-.infoTab {
-    grid-template-columns: repeat(2, 1fr);
+.botonMostrarOcultar{
+    cursor: pointer;
+}
+
+.infoTabMerch {
+    grid-template-columns: repeat(3, 1fr);
     padding: 0 1rem 1rem;
     gap: 1rem;
 }
@@ -217,25 +221,31 @@ main {
 }
 
 .slides img {
+    aspect-ratio: 1/1;
     width: 100%;
+    object-fit: cover;
 }
 
-#prev, #next {
+.prevImagen, .nextImagen {
     display: grid;
-    padding: .5rem;
+    place-items: center;
     font-size: 2rem;
     position: absolute;
+    border-radius: 50%;
+    width: 3rem;
+    aspect-ratio: 1/1;
     top: 50%;
     transform: translateY(-50%);
     background-color: hsla(0, 0%, 0%, .75);
+    cursor: pointer;
 }
 
-#prev {
-    left: 0;
+.prevImagen {
+    left: .5rem;
 }
 
-#next {
-    right: 0;
+.nextImagen {
+    right: .5rem;
 }
 
 .boxDotIndex{
@@ -274,6 +284,19 @@ main {
     border-radius: 2rem;
     color: hsl(0, 0%, 33%);
 }
+
+/* //////////////////////////////////////////////////////////////// */
+.trabajando {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    text-decoration: underline
+}
+
+.trabajando h2 {
+    font-size: 1.25rem
+}
+/* //////////////////////////////////////////////////////////////// */
 
 
 @media only screen and (max-width: 680px) {
