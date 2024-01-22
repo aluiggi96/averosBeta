@@ -37,7 +37,7 @@ main {
 
 .area {
     display: grid;
-    background-color: hsla(0, 0%, 0%, .75);
+    background-color: hsla(0, 0%, 0%, .5);
     overflow: hidden;
     border-radius: 1rem;
     grid-template-rows: 4rem 1fr;
@@ -203,7 +203,7 @@ main {
 
 .carrousel {
     display: grid;
-    grid-template-rows: 5rem 1fr 3rem;
+    grid-template-rows: 6rem 1fr 3rem;
     padding: 1rem;
     background-color: hsla(0, 0%, 0%, .75);
     border-radius: 2rem;
