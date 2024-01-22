@@ -186,10 +186,11 @@ main {
 .seccion-tab {
     padding: 1rem 0;
     display: grid;
-    grid-template-columns: 75% 1fr;
+    justify-content: space-around;
+    grid-template-columns: 75% auto;
 }
 
-.botonMostrarOcultar::before{
+.botonMostrarOcultar{
     cursor: pointer;
 }
 
