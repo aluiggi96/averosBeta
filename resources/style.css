@@ -194,7 +194,8 @@ main {
 }
 
 .infoTabMerch {
-    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 1rem 1rem;
     gap: 1rem;
 }
@@ -308,5 +309,13 @@ main {
 
     .carrousel h2 {
         font-size: medium;
+    }
+}
+
+@media only screen and (min-width: 681px) {
+    .ultimoImpar {
+        aspect-ratio: 1/1;
+        width: 50%;
+        grid-column: span 2;
     }
 }
