@@ -189,7 +189,7 @@ main {
     grid-template-columns: 75% 1fr;
 }
 
-.botonMostrarOcultar{
+.botonMostrarOcultar::before{
     cursor: pointer;
 }
 
