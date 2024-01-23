@@ -1,4 +1,4 @@
-import { ICONOS } from "./logos/logosIconos.js";
+import { getIconoSVG } from './logos/logosIconos.js';
 
 // Datos multimedia (musicas y videos) en forma de objetos
 const MULTIMEDIA = {
@@ -45,7 +45,7 @@ const MULTIMEDIA = {
                 { nombre: "Apple", url: "https://music.apple.com/us/music-video/ser-un-ni%C3%B1o-otra-vez-feat-addisong/1722866849" },
                 { nombre: "Tidal", url: "https://tidal.com/browse/video/336982814" }
             ]
-        }
+        },
     ],
     PROXIMOSLANZAMIENTOS: [
         // {
@@ -159,96 +159,65 @@ function generarListado() {
         listaDisponibles.classList.replace('listaDisponibles', 'listaNoDisponibles')
         listaDisponibles.appendChild(mensajeListaVaciaDisponibles)
     } else {
-        if (contadorTipoMediaDisponible('musica').length > 0) {
-            var titleAreaMusica = document.createElement('h2');
-            titleAreaMusica.classList.add('titleAreaMusica');
-            titleAreaMusica.innerHTML = 'Música';
-            listaDeMusicaDisponibles.appendChild(titleAreaMusica);
+        function crearListaMediaDisponible(tipoMedia, tituloArea, claseTitulo, claseAreaMedia, claseMedia, clasePlataformas) {
+            var listaDeMediaDisponibles = document.createElement('div');
+            listaDeMediaDisponibles.classList.add(claseAreaMedia);
 
-            var musicasDisponibles = document.createElement('div');
-            musicasDisponibles.classList.add('musicasDisponibles');
-            listaDeMusicaDisponibles.appendChild(musicasDisponibles);
-            listaDisponibles.appendChild(listaDeMusicaDisponibles);
+            if (contadorTipoMediaDisponible(tipoMedia).length > 0) {
+                var titleArea = document.createElement('h2');
+                titleArea.classList.add(claseTitulo);
+                titleArea.innerHTML = tituloArea;
 
-            contadorTipoMediaDisponible('musica').forEach(media => {
-                var single = document.createElement('div');
-                single.classList.add('single');
+                var mediaDisponibles = document.createElement('div');
+                mediaDisponibles.classList.add(claseMedia);
 
-                const contenido = `
-                    <img src="${media.coverURL}">
-                    <div>
-                        <h3>${media.artistas}</h3>
-                        <p>${media.nombreCancion}</p>
-                    </div>
-                    <div class="plataformas">
-                        ${media.plataformasMusica.map(plataforma => {
-                    const iconoPlataforma = ICONOS[plataforma.nombre.toLowerCase()];
-                    if (iconoPlataforma) {
-                        return `
-                                    <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
-                                        <svg xmlns="${ICONOS.xmlns}" viewBox="${iconoPlataforma.viewBox}">
-                                            <path d="${iconoPlataforma.d}"/>
-                                        </svg>
-                                    </a>
-                                `;
-                    } else {
-                        console.error(`La plataforma ${plataforma.nombre.toLowerCase()} no está definida en ICONOS.`);
-                        return '';
-                    }
-                }).join('')}
-                    </div>
-                `;
+                listaDeMediaDisponibles.appendChild(titleArea);
+                listaDeMediaDisponibles.appendChild(mediaDisponibles);
+                listaDisponibles.appendChild(listaDeMediaDisponibles);
 
-                single.innerHTML = contenido;
-                musicasDisponibles.appendChild(single);
-            });
+                contadorTipoMediaDisponible(tipoMedia).forEach(media => {
+                    var single = document.createElement('div');
+                    single.classList.add('single');
+
+                    var img = document.createElement('img');
+                    img.src = media.coverURL;
+
+                    var infoContainer = document.createElement('div');
+                    var h3 = document.createElement('h3');
+                    h3.innerHTML = media.artistas;
+                    var p = document.createElement('p');
+                    p.innerHTML = media.nombreCancion;
+                    infoContainer.appendChild(h3);
+                    infoContainer.appendChild(p);
+
+                    var plataformasContainer = document.createElement('div');
+                    plataformasContainer.classList.add(clasePlataformas);
+
+                    media.plataformasMusica.forEach(plataforma => {
+                        var a = document.createElement('a');
+                        a.href = plataforma.url;
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+
+                        var iconoSVG = document.createElement('div');
+                        iconoSVG.innerHTML = getIconoSVG(plataforma.nombre);
+                        a.appendChild(iconoSVG);
+
+                        plataformasContainer.appendChild(a);
+                    });
+
+                    single.appendChild(img);
+                    single.appendChild(infoContainer);
+                    single.appendChild(plataformasContainer);
+
+                    mediaDisponibles.appendChild(single);
+                });
+            }
         }
 
+        crearListaMediaDisponible('musica', 'Música', 'titleAreaMusica', 'musicaArea', 'musicasDisponibles', 'plataformasMusica');
+        crearListaMediaDisponible('video', 'Video', 'titleAreaVideo', 'videoArea', 'videosDisponibles', 'plataformasVideo');
 
-        if (contadorTipoMediaDisponible('video').length > 0) {
-            var titleAreaVideo = document.createElement('h2');
-            titleAreaVideo.classList.add('titleAreaVideo');
-            titleAreaVideo.innerHTML = 'Video';
-            listaDeVideoDisponibles.appendChild(titleAreaVideo);
-
-            var videosDisponibles = document.createElement('div');
-            videosDisponibles.classList.add('videosDisponibles');
-            listaDeVideoDisponibles.appendChild(videosDisponibles);
-            listaDisponibles.appendChild(listaDeVideoDisponibles);
-
-            contadorTipoMediaDisponible('video').forEach(media => {
-                var singleVid = document.createElement('div');
-                singleVid.classList.add('singleVid');
-
-                const contenidoVid = `
-                    <img src="${media.coverURL}">
-                    <div>
-                        <h3>${media.artistas}</h3>
-                        <p>${media.nombreCancion}</p>
-                    </div>
-                    <div class="plataformas">
-                        ${media.plataformasVideo.map(plataforma => {
-                    const iconoPlataforma = ICONOS[plataforma.nombre.toLowerCase()];
-                    if (iconoPlataforma) {
-                        return `
-                                    <a href="${plataforma.url}" target="_blank" rel="noopener noreferrer">
-                                        <svg xmlns="${ICONOS.xmlns}" viewBox="${iconoPlataforma.viewBox}">
-                                            <path d="${iconoPlataforma.d}"/>
-                                        </svg>
-                                    </a>
-                                `;
-                    } else {
-                        console.error(`La plataforma ${plataforma.nombre.toLowerCase()} no está definida en ICONOS.`);
-                        return '';
-                    }
-                }).join('')}
-                    </div>
-                `;
-
-                singleVid.innerHTML = contenidoVid;
-                videosDisponibles.appendChild(singleVid);
-            });
-        }
 
 
         ajusteAUnaSolaAreaDisponible(listaDisponibles)

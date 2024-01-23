@@ -177,7 +177,7 @@ main {
     width: 100%;
 }
 
-.plataformas {
+.plataformasMusica, .plataformasVideo {
     display: flex;
     justify-content: space-around;
     align-items: center;
