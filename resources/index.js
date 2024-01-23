@@ -193,7 +193,7 @@ function generarListado() {
                     var plataformasContainer = document.createElement('div');
                     plataformasContainer.classList.add(clasePlataformas);
 
-                    media.plataformasMusica.forEach(plataforma => {
+                    media[clasePlataformas].forEach(plataforma => {
                         var a = document.createElement('a');
                         a.href = plataforma.url;
                         a.target = '_blank';
