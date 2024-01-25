@@ -52,8 +52,8 @@ main {
     padding: 0 1rem 1rem 1rem;
     align-items: center;
     gap: 1rem;
-    grid-template-columns: 35% auto;
-    grid-template-areas: "listaProximos listaDisponibles"
+    grid-template-columns: 37.5% auto;
+    grid-template-areas: "listaProximos listaProximos"
         "albumProximo listaDisponibles";
 }
 
@@ -264,16 +264,12 @@ main {
 /* //////////////////////////////////////////////////////////////// */
 
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 768px) {
     .boxMusica {
         grid-template-columns: 1fr;
         grid-template-areas: "albumProximo"
             "listaProximos"
             "listaDisponibles";
-    }
-
-    .musica {
-        max-height: 100rem;
     }
 
     .infoTab {
@@ -285,7 +281,7 @@ main {
     }
 }
 
-@media only screen and (min-width: 681px) {
+@media only screen and (min-width: 769px) {
     .ultimoImpar {
         aspect-ratio: 1/1;
         width: 50%;
