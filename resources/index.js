@@ -8,7 +8,7 @@ const MULTIMEDIA = {
             video: false,
             artistas: "Averos Music, AddiSonG",
             nombreCancion: "Sobrenatural",
-            coverURL: "https://i.scdn.co/image/ab67616d00001e0239387b3eb60c238a17dc049c",
+            coverURL: "https://i.scdn.co/image/ab67616d00001e0297f5d6d8a1d280ab8ab68ac1",
             plataformasMusica: [
                 { nombre: "Spotify", url: "https://open.spotify.com/track/3Q6G1iAlw1Cws3RDE96cDL" },
                 { nombre: "YTMusic", url: "https://music.youtube.com/watch?v=nqlkZ2DTB_A&si=eD9rs4j5foER_FW_" },
@@ -47,15 +47,11 @@ const MULTIMEDIA = {
             ]
         },
     ],
-    PROXIMOSLANZAMIENTOS: [
-        // {
-        //   musica: false
-        //   video: false
-        //   artistas: "Averos Music, AddiSonG",
-        //   nombreCancion: "Sobrenatural",
-        //   coverURL: "https://i.scdn.co/image/ab67616d00001e0239387b3eb60c238a17dc049c",
-        // }
-    ]
+    PROXIMOSLANZAMIENTOS: {
+        artistas: "Averos Music, Saúl Padilla (Música)",
+        nombreCancion: "Matando Mariposas",
+        coverURL: "./resources/img/portada_MatandoMariposas.jpg",
+    }
 }
 
 const MERCANCIAS = [
@@ -97,31 +93,6 @@ const MERCANCIAS = [
     },
 ];
 
-const botonDisponibles = document.querySelector(".botonDisponibles")
-const botonProximos = document.querySelector(".botonProximos")
-const listaDisponibles = document.querySelector('.listaDisponibles')
-const listaProximos = document.querySelector('.listaProximos')
-
-// Funciones para cambiar entre el listado de multimedia disponible y de proximos
-// Asignar eventos a los botones
-botonDisponibles.addEventListener('click', () => mostrarLista('disponibles'));
-botonProximos.addEventListener('click', () => mostrarLista('proximos'));
-
-// Función genérica para mostrar la lista
-function mostrarLista(tipo) {
-    const listaMostrar = tipo === 'disponibles' ? listaDisponibles : listaProximos;
-    const listaOcultar = tipo === 'disponibles' ? listaProximos : listaDisponibles;
-
-    // Agregar clase activa al botón clickeado y removerla del otro
-    botonDisponibles.classList.toggle('botonActivo', tipo === 'disponibles');
-    botonProximos.classList.toggle('botonActivo', tipo === 'proximos');
-
-    // Mostrar la lista correspondiente y ocultar la otra
-    listaMostrar.style.display = 'grid';
-    listaOcultar.style.display = 'none';
-}
-
-
 // Verificar cuantos tipo de ('musica' o 'video') existen
 function contadorTipoMediaDisponible(tipo) {
     const filtro = MULTIMEDIA.DISPONIBLES.filter(cancion => cancion[tipo] === true)
@@ -137,106 +108,105 @@ function ajusteAUnaSolaAreaDisponible(listaAAjustar) {
 }
 
 // Generador de media en Disponible y Proximos Lanzamientos
-function generarListado() {
+function generarListadoDisponibles() {
+    const listaDisponibles = document.querySelector('.listaDisponibles')
     var listaDeMusicaDisponibles = document.createElement('div');
     var listaDeVideoDisponibles = document.createElement('div');
-    var listaDeMusicaProximos = document.createElement('div');
-    var listaDeVideoProximos = document.createElement('div');
-    var mensajeListaVaciaDisponibles = document.createElement('p')
-    var mensajeListaVaciaProximos = document.createElement('p')
 
-    mensajeListaVaciaProximos.innerHTML = 'Estamos plasmando ideas del alma en música... 🎵<br>Sigan atentos en nuestras redes oficiales'
-    mensajeListaVaciaDisponibles.innerHTML = "No hay nada disponible por el momento... 😔<br>Vuelve mas tarde 😊"
-
-    mensajeListaVaciaDisponibles.classList.add('mensajeListaVacia')
-    mensajeListaVaciaProximos.classList.add('mensajeListaVacia')
     listaDeMusicaDisponibles.classList.add('musicaArea');
     listaDeVideoDisponibles.classList.add('videoArea');
-    listaDeMusicaProximos.classList.add('musicaArea');
-    listaDeVideoProximos.classList.add('videoArea');
 
-    if (MULTIMEDIA.DISPONIBLES.length === 0) {
-        listaDisponibles.classList.replace('listaDisponibles', 'listaNoDisponibles')
-        listaDisponibles.appendChild(mensajeListaVaciaDisponibles)
-    } else {
-        function crearListaMediaDisponible(tipoMedia, tituloArea, claseTitulo, claseAreaMedia, claseMedia, clasePlataformas) {
-            var listaDeMediaDisponibles = document.createElement('div');
-            listaDeMediaDisponibles.classList.add(claseAreaMedia);
+    function crearListaMediaDisponible(tipoMedia, tituloArea, claseAreaMedia, clasePlataformas) {
+        var listaDeMediaDisponibles = document.createElement('div');
+        listaDeMediaDisponibles.classList.add(claseAreaMedia);
 
-            if (contadorTipoMediaDisponible(tipoMedia).length > 0) {
-                var titleArea = document.createElement('h2');
-                titleArea.classList.add(claseTitulo);
-                titleArea.innerHTML = tituloArea;
+        if (contadorTipoMediaDisponible(tipoMedia).length > 0) {
+            var titleArea = document.createElement('h2');
+            titleArea.classList.add('titleArea');
+            titleArea.innerHTML = tituloArea;
 
-                var mediaDisponibles = document.createElement('div');
-                mediaDisponibles.classList.add(claseMedia);
+            var mediaDisponibles = document.createElement('div');
+            mediaDisponibles.classList.add('mediaDisponibles');
 
-                listaDeMediaDisponibles.appendChild(titleArea);
-                listaDeMediaDisponibles.appendChild(mediaDisponibles);
-                listaDisponibles.appendChild(listaDeMediaDisponibles);
+            listaDeMediaDisponibles.appendChild(titleArea);
+            listaDeMediaDisponibles.appendChild(mediaDisponibles);
+            listaDisponibles.appendChild(listaDeMediaDisponibles);
 
-                contadorTipoMediaDisponible(tipoMedia).forEach(media => {
-                    var single = document.createElement('div');
-                    single.classList.add('single');
+            contadorTipoMediaDisponible(tipoMedia).forEach(media => {
+                var single = document.createElement('div');
+                single.classList.add('single');
 
-                    var img = document.createElement('img');
-                    img.src = media.coverURL;
+                var img = document.createElement('img');
+                img.src = media.coverURL;
 
-                    var infoContainer = document.createElement('div');
-                    var h3 = document.createElement('h3');
-                    h3.innerHTML = media.artistas;
-                    var p = document.createElement('p');
-                    p.innerHTML = media.nombreCancion;
-                    infoContainer.appendChild(h3);
-                    infoContainer.appendChild(p);
+                var infoContainer = document.createElement('div');
+                var h3 = document.createElement('h3');
+                h3.innerHTML = media.artistas;
+                var p = document.createElement('p');
+                p.innerHTML = media.nombreCancion;
+                infoContainer.appendChild(h3);
+                infoContainer.appendChild(p);
 
-                    var plataformasContainer = document.createElement('div');
-                    plataformasContainer.classList.add(clasePlataformas);
+                var plataformasContainer = document.createElement('div');
+                plataformasContainer.classList.add('plataformas');
 
-                    media[clasePlataformas].forEach(plataforma => {
-                        var a = document.createElement('a');
-                        a.href = plataforma.url;
-                        a.target = '_blank';
-                        a.rel = 'noopener noreferrer';
+                media[clasePlataformas].forEach(plataforma => {
+                    var a = document.createElement('a');
+                    a.href = plataforma.url;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
 
-                        var iconoSVG = document.createElement('div');
-                        iconoSVG.innerHTML = getIconoSVG(plataforma.nombre);
-                        a.appendChild(iconoSVG);
+                    var iconoSVG = document.createElement('div');
+                    iconoSVG.innerHTML = getIconoSVG(plataforma.nombre);
+                    a.appendChild(iconoSVG);
 
-                        plataformasContainer.appendChild(a);
-                    });
-
-                    single.appendChild(img);
-                    single.appendChild(infoContainer);
-                    single.appendChild(plataformasContainer);
-
-                    mediaDisponibles.appendChild(single);
+                    plataformasContainer.appendChild(a);
                 });
-            }
+
+                single.appendChild(img);
+                single.appendChild(infoContainer);
+                single.appendChild(plataformasContainer);
+
+                mediaDisponibles.appendChild(single);
+            });
         }
-
-        crearListaMediaDisponible('musica', 'Música', 'titleAreaMusica', 'musicaArea', 'musicasDisponibles', 'plataformasMusica');
-        crearListaMediaDisponible('video', 'Video', 'titleAreaVideo', 'videoArea', 'videosDisponibles', 'plataformasVideo');
-
-
-
-        ajusteAUnaSolaAreaDisponible(listaDisponibles)
-
-        var cards = document.querySelectorAll('.card');
-        cards.forEach(function (card) {
-            card.classList.add('cardDisponible');
-        });
     }
 
-    if (MULTIMEDIA.PROXIMOSLANZAMIENTOS.length === 0) {
-        listaProximos.appendChild(mensajeListaVaciaProximos)
-    } else {
-        listaProximos.appendChild(listaDeMusicaProximos);
-        listaProximos.appendChild(listaDeVideoProximos);
-    }
+    crearListaMediaDisponible('musica', 'Música', 'musicaArea', 'plataformasMusica');
+    crearListaMediaDisponible('video', 'Video', 'videoArea', 'plataformasVideo');
 }
 
-generarListado();
+generarListadoDisponibles();
+
+////////////////////////////////////////////////////////////////////////////////////
+
+function generarListadoProximo() {
+    const listaProximos = document.querySelector('.listaProximos')
+    const proximaMedia = MULTIMEDIA.PROXIMOSLANZAMIENTOS
+    var titleAreaProximos = document.createElement('h2')
+    titleAreaProximos.classList.add('titleArea')
+    titleAreaProximos.innerHTML = 'Próximo Lanzamiento'
+
+    var mediaProxima = document.createElement('div')
+    mediaProxima.classList.add('mediaProxInfo')
+    var infoContainer = document.createElement('div');
+    var h3 = document.createElement('h3');
+    h3.innerHTML = proximaMedia.artistas;
+    var p = document.createElement('p');
+    p.innerHTML = proximaMedia.nombreCancion;
+    infoContainer.appendChild(h3);
+    infoContainer.appendChild(p);
+
+    var img = document.createElement('img')
+    img.src = proximaMedia.coverURL
+
+    listaProximos.appendChild(titleAreaProximos)
+    listaProximos.appendChild(mediaProxima)
+    mediaProxima.appendChild(infoContainer)
+    mediaProxima.appendChild(img)
+}
+
+generarListadoProximo()
 
 ////////////////////////////////////////////////////////////////////////////////////
 
