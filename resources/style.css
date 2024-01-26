@@ -29,7 +29,7 @@ main {
     background-color: hsla(0, 0%, 100%, .1);
     backdrop-filter: blur(2rem);
     -webkit-backdrop-filter: blur(2rem);
-    padding: 1rem;
+    padding: .75rem;
     margin: 0 1rem;
     border-radius: 2rem;
     gap: 2rem;
@@ -38,7 +38,7 @@ main {
 .area {
     display: grid;
     background-color: hsla(0, 0%, 0%, .5);
-    border-radius: 1rem;
+    border-radius: 1.25rem;
     grid-template-rows: 4rem 1fr;
 }
 
@@ -49,24 +49,23 @@ main {
 
 .boxMusica {
     display: grid;
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 .5rem .5rem .5rem;
     align-items: center;
     gap: 1rem;
     grid-template-columns: 37.5% auto;
-    grid-template-areas: "listaProximos listaProximos"
-        "albumProximo listaDisponibles";
+    grid-template-areas: "albumProximo listaDisponibles";
 }
 
-.listaProximos {
+.listaProximo {
     display: grid;
     padding: 1rem;
     gap: 1rem;
     background-color: hsla(0, 0%, 0%, .75);
     border-radius: .5rem;
-    grid-area: listaProximos;
+    grid-area: listaProximo;
 }
 
-.listaProximos img {
+.listaProximo img {
     width: 20%;
     aspect-ratio: 1/1;
 }
@@ -268,7 +267,12 @@ main {
     .boxMusica {
         grid-template-columns: 1fr;
         grid-template-areas: "albumProximo"
-            "listaProximos"
+            "listaDisponibles";
+    }
+
+    .boxMusicaConProx {
+        grid-template-areas: "albumProximo"
+            "listaProximo"
             "listaDisponibles";
     }
 
@@ -282,6 +286,11 @@ main {
 }
 
 @media only screen and (min-width: 769px) {
+    .boxMusicaConProx {
+        grid-template-areas: "listaProximo listaProximo"
+        "albumProximo listaDisponibles";
+    }
+    
     .ultimoImpar {
         aspect-ratio: 1/1;
         width: 50%;

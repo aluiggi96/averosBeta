@@ -181,29 +181,36 @@ generarListadoDisponibles();
 ////////////////////////////////////////////////////////////////////////////////////
 
 function generarListadoProximo() {
-    const listaProximos = document.querySelector('.listaProximos')
-    const proximaMedia = MULTIMEDIA.PROXIMOSLANZAMIENTOS
-    var titleAreaProximos = document.createElement('h2')
-    titleAreaProximos.classList.add('titleArea')
-    titleAreaProximos.innerHTML = 'Próximo Lanzamiento'
+    if (Object.keys(MULTIMEDIA.PROXIMOSLANZAMIENTOS).length > 0) {
+        const boxMusica = document.querySelector('.boxMusica')
+        boxMusica.classList.add('boxMusicaConProx')
 
-    var mediaProxima = document.createElement('div')
-    mediaProxima.classList.add('mediaProxInfo')
-    var infoContainer = document.createElement('div');
-    var h3 = document.createElement('h3');
-    h3.innerHTML = proximaMedia.artistas;
-    var p = document.createElement('p');
-    p.innerHTML = proximaMedia.nombreCancion;
-    infoContainer.appendChild(h3);
-    infoContainer.appendChild(p);
+        var listaProximos = document.createElement('div')
+        listaProximos.classList.add('listaProximo')
+        const proximaMedia = MULTIMEDIA.PROXIMOSLANZAMIENTOS
+        var titleAreaProximos = document.createElement('h2')
+        titleAreaProximos.classList.add('titleArea')
+        titleAreaProximos.innerHTML = 'Próximo Lanzamiento'
 
-    var img = document.createElement('img')
-    img.src = proximaMedia.coverURL
+        var mediaProxima = document.createElement('div')
+        mediaProxima.classList.add('mediaProxInfo')
+        var infoContainer = document.createElement('div');
+        var h3 = document.createElement('h3');
+        h3.innerHTML = proximaMedia.artistas;
+        var p = document.createElement('p');
+        p.innerHTML = proximaMedia.nombreCancion;
+        infoContainer.appendChild(h3);
+        infoContainer.appendChild(p);
 
-    listaProximos.appendChild(titleAreaProximos)
-    listaProximos.appendChild(mediaProxima)
-    mediaProxima.appendChild(infoContainer)
-    mediaProxima.appendChild(img)
+        var img = document.createElement('img')
+        img.src = proximaMedia.coverURL
+
+        boxMusica.appendChild(listaProximos)
+        listaProximos.appendChild(titleAreaProximos)
+        listaProximos.appendChild(mediaProxima)
+        mediaProxima.appendChild(infoContainer)
+        mediaProxima.appendChild(img)
+    }
 }
 
 generarListadoProximo()
