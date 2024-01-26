@@ -172,7 +172,7 @@ main {
     grid-template-rows: 6rem 1fr 3rem;
     padding: 1rem;
     background-color: hsla(0, 0%, 0%, .75);
-    border-radius: 2rem;
+    border-radius: .75rem;
     gap: .5rem;
 }
 
