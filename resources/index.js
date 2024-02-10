@@ -99,14 +99,6 @@ function contadorTipoMediaDisponible(tipo) {
     return filtro
 }
 
-// Ajuste al area disponible
-function ajusteAUnaSolaAreaDisponible(listaAAjustar) {
-    if (listaAAjustar.childNodes.length < 2) {
-        listaAAjustar.classList.replace('listaDisponibles', 'soloUnaAreaDisponible')
-        listaAAjustar.childNodes[0].style.maxHeight = '36.250rem'
-    }
-}
-
 // Generador de media en Disponible y Proximos Lanzamientos
 function generarListadoDisponibles() {
     const listaDisponibles = document.querySelector('.listaDisponibles')

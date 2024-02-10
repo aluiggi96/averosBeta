@@ -25,7 +25,6 @@ main {
 .contenido {
     display: grid;
     width: 100%;
-    max-width: 85rem;
     background-color: hsla(0, 0%, 100%, .1);
     backdrop-filter: blur(2rem);
     -webkit-backdrop-filter: blur(2rem);
@@ -42,6 +41,17 @@ main {
     grid-template-rows: 4rem 1fr;
 }
 
+.mainBanner {
+    grid-template-rows: 1fr;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
+}
+
 .tituloSeccion {
     display: grid;
     place-items: center;
@@ -52,7 +62,7 @@ main {
     padding: 0 .5rem .5rem .5rem;
     align-items: center;
     gap: 1rem;
-    grid-template-columns: 37.5% auto;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "albumProximo listaDisponibles";
 }
 
@@ -90,7 +100,19 @@ main {
     place-items: center;
     width: 100%;
     height: 100%;
-    background-color: hsla(0, 0%, 0%, .9);
+}
+
+.mainBanner .darkCover{
+    background-color: hsla(0, 0%, 0%, .66);
+    padding: 1rem;
+    text-align: center;
+    text-wrap: pretty;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.containerCover .darkCover{
+    background-color: hsla(0, 0%, 0%, .8);
 }
 
 .darkCover p {
@@ -239,7 +261,7 @@ main {
     aspect-ratio: 1/1;
 }
 
-.botonComprar {
+.botonComprar, .boton{
     margin: auto;
     display: grid;
     align-items: center;
@@ -250,6 +272,7 @@ main {
     font-weight: bold;
     border-radius: 2rem;
     color: hsl(0, 0%, 33%);
+    cursor: pointer;
 }
 
 /* //////////////////////////////////////////////////////////////// */
@@ -264,6 +287,10 @@ main {
 
 
 @media only screen and (max-width: 768px) {
+    .mainBanner {
+        background-image: url(./img/banner-mobile.jpg);
+    }
+
     .boxMusica {
         grid-template-columns: 1fr;
         grid-template-areas: "albumProximo"
@@ -288,12 +315,16 @@ main {
 @media only screen and (min-width: 769px) {
     .boxMusicaConProx {
         grid-template-areas: "listaProximo listaProximo"
-        "albumProximo listaDisponibles";
+            "albumProximo listaDisponibles";
     }
-    
+
     .ultimoImpar {
         aspect-ratio: 1/1;
         width: 50%;
         grid-column: span 2;
+    }
+
+    .contenido {
+        max-width: 60rem;
     }
 }
