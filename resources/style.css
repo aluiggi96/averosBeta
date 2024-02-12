@@ -104,7 +104,7 @@ main {
     height: 100%;
 }
 
-.mainBanner .darkCover{
+.mainBanner .darkCover {
     background-color: hsla(0, 0%, 0%, .66);
     padding: 1rem;
     text-align: center;
@@ -113,7 +113,7 @@ main {
     -webkit-backdrop-filter: blur(5px);
 }
 
-.containerCover .darkCover{
+.containerCover .darkCover {
     background-color: hsla(0, 0%, 0%, .8);
 }
 
@@ -137,7 +137,6 @@ main {
 .musicaArea,
 .videoArea {
     display: grid;
-    max-height: 19rem;
     gap: 1rem;
     grid-template-rows: auto 1fr;
 }
@@ -153,7 +152,7 @@ main {
 
 .mediaDisponibles {
     display: grid;
-    gap: .75rem;
+    gap: .5rem;
     overflow-y: scroll;
 }
 
@@ -263,7 +262,8 @@ main {
     aspect-ratio: 1/1;
 }
 
-.botonComprar, .boton{
+.botonComprar,
+.boton {
     margin: auto;
     display: grid;
     align-items: center;
@@ -288,7 +288,7 @@ main {
 /* //////////////////////////////////////////////////////////////// */
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 671px) {
     .mainBanner {
         background-image: url(./img/banner-mobile.jpg);
     }
@@ -312,9 +312,14 @@ main {
     .carrousel h2 {
         font-size: medium;
     }
+
+    .musicaArea,
+    .videoArea {
+        max-height: 15rem;
+    }
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 671px) {
     .mainBanner {
         background-image: url(./img/banner-desktop.jpg);
     }
@@ -322,6 +327,12 @@ main {
     .boxMusicaConProx {
         grid-template-areas: "listaProximo listaProximo"
             "albumProximo listaDisponibles";
+    }
+
+    .listaDisponibles {
+        grid-template-rows: repeat(2, 1fr);
+        width: 100%;
+        aspect-ratio: 1/1;
     }
 
     .ultimoImpar {
