@@ -8,9 +8,12 @@ function createBarNav() {
 
 function createNav() {
     var nav = document.createElement('nav');
+    var addAnchorImg = document.createElement('a')
+    addAnchorImg.href = "index.html"
+    nav.appendChild(addAnchorImg)
     var imgLogoAveros = document.createElement('img');
     imgLogoAveros.classList.add('averosLogo')
     imgLogoAveros.src = "./resources/logos/averos-logo.png";
-    nav.appendChild(imgLogoAveros);
+    addAnchorImg.appendChild(imgLogoAveros);
     return nav;
 }
