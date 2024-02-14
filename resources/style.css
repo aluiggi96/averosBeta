@@ -20,7 +20,7 @@ main {
     background-color: hsla(0, 0%, 100%, .1);
     width: 95%;
     max-width: 90rem;
-    margin: 5.5rem auto 1rem;
+    margin: 5rem auto 1rem;
     padding: .75rem;
     border-radius: 1.75rem;
     backdrop-filter: blur(2rem);
