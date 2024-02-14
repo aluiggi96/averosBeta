@@ -1,12 +1,10 @@
 function createBarNav() {
     var header = document.querySelector('header');
-    var nav = logo();
-    var tabsMenu = menu();
-    var iconMenuMobile = hamburgerIcon();
-    
-    iconMenuMobile.addEventListener('click', function() {
-        menuIconChanger();
-    });
+    var nav = createNav();
+    var tabsMenu = createMenu();
+    var iconMenuMobile = createHamburgerIcon();
+
+    iconMenuMobile.addEventListener('click', menuIconChanger);
 
     header.appendChild(nav);
     header.appendChild(tabsMenu);
@@ -21,29 +19,27 @@ function menuIconChanger() {
     menuIcon.classList.toggle('fa-xmark');
 
     var body = document.querySelector('body');
-
     body.style.overflow = (body.style.overflow === 'hidden') ? 'auto' : 'hidden';
 
     var menu = document.querySelector('.menu');
     menu.style.left = (menu.style.left === '0px' ? '100%' : '0px');
 }
 
-
-function logo() {
+function createNav() {
     var nav = document.createElement('nav');
-    var addAnchorImg = document.createElement('a');
-    addAnchorImg.href = 'index.html';
+    var addAnchorImg = createAnchor('index.html');
     nav.appendChild(addAnchorImg);
-    var imgLogoAveros = document.createElement('img');
-    imgLogoAveros.classList.add('averosLogo');
-    imgLogoAveros.src = `./resources/logos/averos-logo.png`;
+
+    var imgLogoAveros = createImage('averosLogo', './resources/logos/averos-logo.png');
     addAnchorImg.appendChild(imgLogoAveros);
+
     return nav;
 }
 
-function menu() {
+function createMenu() {
     var tabsMenu = document.createElement('div');
     tabsMenu.classList.add('menu');
+
     var sponsoredMobile = createMenuItem('Patrocinadores', '#');
     var aboutUsMobile = createMenuItem('Quienes somos', 'about.html');
 
@@ -53,7 +49,7 @@ function menu() {
     return tabsMenu;
 }
 
-function hamburgerIcon() {
+function createHamburgerIcon() {
     var hamburgerMenuIcon = document.createElement('i');
     hamburgerMenuIcon.id = 'botonMenuMobile';
     hamburgerMenuIcon.classList.add('fa-solid', 'fa-bars', 'hamburger-menu');
@@ -61,9 +57,21 @@ function hamburgerIcon() {
     return hamburgerMenuIcon;
 }
 
+function createAnchor(href) {
+    var anchor = document.createElement('a');
+    anchor.href = href;
+    return anchor;
+}
+
+function createImage(className, src) {
+    var img = document.createElement('img');
+    img.classList.add(className);
+    img.src = src;
+    return img;
+}
+
 function createMenuItem(text, link) {
-    var menuItem = document.createElement('a');
-    menuItem.href = link;
+    var menuItem = createAnchor(link);
     menuItem.textContent = text;
     return menuItem;
 }

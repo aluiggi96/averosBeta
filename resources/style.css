@@ -16,22 +16,16 @@ body::before {
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
-    margin-bottom: 1rem;
-}
-
-.contenido {
     display: grid;
-    width: 100%;
     background-color: hsla(0, 0%, 100%, .1);
+    width: 95%;
+    max-width: 90rem;
+    margin: 5.5rem auto 1rem;
+    padding: .75rem;
+    border-radius: 1.75rem;
     backdrop-filter: blur(2rem);
     -webkit-backdrop-filter: blur(2rem);
-    padding: .75rem;
-    margin: 0 1rem;
-    border-radius: 2rem;
-    gap: .5rem;
+    gap: .75rem;
 }
 
 .area {
