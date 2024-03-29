@@ -40,10 +40,10 @@ function createMenu() {
     var tabsMenu = document.createElement('div');
     tabsMenu.classList.add('menu');
 
-    var sponsoredMobile = createMenuItem('Patrocinadores', '#');
+    // var sponsoredMobile = createMenuItem('Patrocinadores', '#');
     var aboutUsMobile = createMenuItem('Quienes somos', 'about.html');
 
-    tabsMenu.appendChild(sponsoredMobile);
+    // tabsMenu.appendChild(sponsoredMobile);
     tabsMenu.appendChild(aboutUsMobile);
 
     return tabsMenu;
