@@ -5,7 +5,7 @@ const MULTIMEDIA = {
     DISPONIBLES: [
         {
             musica: true,
-            video: false,
+            video: true,
             artistas: "Averos Music, AddiSonG",
             nombreCancion: "Sobrenatural",
             coverURL: "https://i.scdn.co/image/ab67616d00001e0297f5d6d8a1d280ab8ab68ac1",
@@ -14,7 +14,11 @@ const MULTIMEDIA = {
                 { nombre: "YTMusic", url: "https://music.youtube.com/watch?v=nqlkZ2DTB_A&si=eD9rs4j5foER_FW_" },
                 { nombre: "Apple", url: "https://music.apple.com/us/album/sobrenatural-feat-addisong/1717492942?i=1717492943" }
             ],
-            plataformasVideo: [],
+            plataformasVideo: [
+                { nombre: "YouTube", url: "https://www.youtube.com/watch?v=7W1Flyt-8Yk" },
+                { nombre: "Apple", url: "https://music.apple.com/us/music-video/sobrenatural-feat-addisong/1744992164" },
+                { nombre: "Tidal", url: "https://tidal.com/browse/video/361696683" }
+            ],
         },
         {
             musica: true,
