@@ -2,7 +2,8 @@ const redesSociales = {
     instagram: "https://instagram.com/averos_official",
     facebook: "https://www.facebook.com/profile.php?id=61554472505893&mibextid=gik2fB",
     youtube: "https://www.youtube.com/channel/UC-ANElMqJsrkBWTf4pTjVHA",
-    tiktok: "https://www.tiktok.com/@averos1112"
+    tiktok: "https://www.tiktok.com/@averos1112",
+    email: "mailto:averosmusic@gmail.com"
 }
 
 function createBarFooter() {
@@ -40,6 +41,9 @@ function createRedesSociales() {
                 break
             case 'tiktok':
                 icono.classList.add('fab', 'fa-tiktok')
+                break
+            case 'email':
+                icono.classList.add('fa-solid', "fa-envelope")
                 break
             default:
                 break
